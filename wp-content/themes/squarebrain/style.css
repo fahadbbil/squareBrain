@@ -1044,6 +1044,46 @@ body.page, body.post{
 h1, h2, h3, h4, h5{
 	font-family: "Chinese Rocks Rg", Roboto, serif !important;
 }
+.search-block{
+	position: absolute;
+	width: 300px;
+	display: none;
+	right: 3px;
+	top: 43px;
+	z-index: 99;
+	padding: 8px;
+	background: #212121c2;
+	border-radius: 4px;
+}
+
+
+.search-block input {
+	background-color: transparent !important;
+	padding-right: 40px;
+	color: #fff !important;
+	border: 1px solid #fff !important;
+	font-family: sans-serif;
+}
+
+
+.search-block input:focus{
+	box-shadow: none;
+	outline: 0;
+	border: 1px solid #E5BD3E !important;
+}
+
+.search-block .form-group {
+	position: relative;
+	margin-bottom: 0;
+}
+.search-block  button[type=submit]{
+	 position: absolute;
+	 right: 8px;
+	 top: 8px;
+	 color: #fff;
+}
+
+
 
 @media(max-width: 767px){
 	#customer_details .col-1,

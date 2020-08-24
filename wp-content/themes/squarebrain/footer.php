@@ -38,6 +38,20 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     })(jQuery);
+
+    (function (){
+        $(document).on('click', "#search-toggle", function(){
+            $('#search-area').toggle();
+            $('#search-area input[type=text]').focus();
+        });
+
+/*
+        $("#search-area").blur(function(){
+            $('#search-area').toggle();
+            alert(1)
+        });*/
+
+    })(jQuery);
 </script>
 
 <?php wp_footer(); ?>

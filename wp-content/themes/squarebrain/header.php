@@ -39,10 +39,10 @@
 	                    <img alt="Cluster Antivirus Logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
 	                </a>
 	                <div class="nav-btn">
-	                    <a data-toggle="tooltip" title="Send Email" data-placement="top" href="mailto:<?php echo get_theme_mod( 'squarebrain_email_settings', false ); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-1.png"></a>
-	                    <a data-toggle="tooltip" title="Call now" data-placement="top" href="tel:<?php echo get_theme_mod( 'squarebrain_phone_settings', false ); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-2.png"></a>
-	                    <a data-toggle="tooltip" title="Search..." data-placement="top" href="javascript: void(0)"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-3.png"></a>
-	                    <a data-toggle="tooltip" title="Your Cart Items" data-placement="top" href="<?php echo wc_get_cart_url(); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-4.png">
+	                    <a title="Send Email" href="mailto:<?php echo get_theme_mod( 'squarebrain_email_settings', false ); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-1.png"></a>
+	                    <a title="Call now" href="tel:<?php echo get_theme_mod( 'squarebrain_phone_settings', false ); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-2.png"></a>
+	                    <a title="Search..." href="javascript: void(0)" id="search-toggle"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-3.png"></a>
+	                    <a title="Your Cart Items" href="<?php echo wc_get_cart_url(); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-4.png">
 	                    	<span id="mini-cart-count">
 	                    		<?php 
 		                    		if (WC()->cart->get_cart_contents_count() != 0) {
@@ -55,6 +55,15 @@
 	                        <span class="fa fa-bars"></span>
 	                    </button>
 	                </div>
+                    <div class="search-block" id="search-area">
+                        <form class="navbar-form" action="" method="" role="search">
+                            <div class="form-group">
+                                <input type="text" name="" class="form-control" placeholder="Search" value="">
+                            </div>
+                            <button type="submit" class="btn bg-black button-fix"><i class="fa fa-search color-white"></i>
+                            </button>
+                        </form>
+                    </div>
 	                <div class="collapse navbar-collapse"  id="squarebrain_nav">
 	                	<?php 
 	                		wp_nav_menu( array( 
