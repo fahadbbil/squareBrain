@@ -1,0 +1,134 @@
+.pr{
+  position: relative;
+}
+.ml-5{
+  margin-left: 40px;
+}
+
+.navbar-default{
+    padding: 0 1rem;
+    border-bottom: 1px solid #e6e6e6;
+  background-color: $pink;
+
+  .navbar-toggler{
+    color: #f2d1de;
+  }
+  .nav-btn{
+    position: absolute;
+    right: 15px;
+  }
+  .navbar-toggler:focus{
+    color: $dark-yellow;
+    outline: 0;
+    border: 0;
+  }
+
+
+  .navbar-brand{
+    img{
+      z-index: 9;
+      position: absolute;
+      left: 15px;
+      height: 90px;
+      top: -25px;
+    }
+  }
+  .pr{
+    position: relative;
+  }
+/*  .nav-btn{
+    position: absolute;
+    right: 15px;
+  }*/
+  #squarebrain_nav{
+    padding-left: 250px;
+    .home-nav{
+      .nav-link{
+        color: #eee;
+        font-size: 16px;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        &:hover{
+          color: #fff;
+        }
+      }
+      .active{
+        .nav-link{
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .nav-btn a img{
+    max-height: 19px;
+    margin-left: 15px;
+
+    &:hover{
+      color: $green;
+      text-decoration: none;
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 991px){
+  .m-show{
+    display: block;
+  }
+  .m-hide{
+    display: none;
+  }
+
+
+  .navbar-default{
+    .navbar-brand{
+      img{
+        z-index: 9;
+        position: absolute;
+        left: 15px;
+        height: 65px;
+        top: -18px;
+      }
+    }
+
+
+    .nav-btn{
+      position: relative;
+      top: 4px;
+      margin-right: 40px;
+      height: 29px;
+
+      a img {
+        max-height: 13px;
+        margin-left: 10px;
+      }
+    }
+    .navbar-toggler{
+      top: -4px;
+      position: absolute;
+      right: -41px;
+      padding-right: 0;
+    }
+    #squarebrain_nav{
+      .home-nav{
+        padding-top: 50px;
+        padding-bottom: 30px;
+        border-top: 1px solid #f09fbf63;
+      }
+      padding-left: 0 !important;
+      .nav-link{
+        padding-left: 0;
+      }
+
+      .nav-item.active{
+        .nav-link{
+          color: $dark-yellow;
+        }
+      }
+    }
+  }
+}
+

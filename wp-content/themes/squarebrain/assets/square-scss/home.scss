@@ -1,0 +1,230 @@
+@import "variables";
+
+body{
+  font-family: 'Chewy', cursive;
+  font-size: 14px;
+  color: #231f20;
+}
+@import "navbar";
+.ml-5{
+  margin-left: 40px;
+}
+.pink-btn{
+  font-size: 17px;
+  color: #fff;
+  background-color: $pink;
+  border: 3px solid #000;
+}
+.ylw-btn{
+  font-size: 17px;
+  color: #000;
+  background-color: $dark-yellow;
+  border: 3px solid #000;
+}
+.bg-wrapper{
+  padding-top: 35px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.home-slider{
+  overflow: hidden;
+  margin-top: 2px;
+  .item-one{
+    background-color: $dark-blue;
+  }
+  .item-two{
+    background-color: $dark-yellow;
+  }
+  .item-three{
+    background-color: $pink;
+    .form-control{
+      background-color: $input-bg;
+      min-height: 45px;
+      margin-bottom: 15px;
+      border-radius: 0;
+      border: 0;
+      font-size: 19px;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #000;
+      opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #000;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: #000;
+    }
+
+  }
+  .item-four{
+    background-color: $blue;
+
+    .post-thumb{
+      position: absolute;
+      right: 50px;
+      top: 23%;
+      bottom: 0;
+      width: 380px;
+      height: 224px;
+      border: 3px solid #000;
+      background-color: $dark-blue;
+    }
+  }
+  .carousel-item{
+    background-size: 500px auto;
+    background-repeat: no-repeat;
+    background-position: center right;
+    border: 3px solid #000;
+
+
+    .flex{
+      height: 440px;
+      display: flex;
+      vertical-align: middle;
+    }
+    h1{
+      font-size: 80px;
+      text-shadow: 0 0 10px #000;
+      color: #fff;
+      line-height: 0.9;
+      font-family: "Chinese Rocks Rg", Roboto, serif;
+    }
+    h2{
+      font-size: 65px;
+      text-shadow: 0 0 10px #000;
+      color: #fff;
+      line-height: 0.9;
+      font-family: "Chinese Rocks Rg", Roboto, serif;
+    }
+
+    .pink-btn{
+      margin-top: 15px;
+      font-size: 23px;
+      color: #fff;
+      background-color: $pink;
+      border: 3px solid #000;
+    }
+    .ylw-btn{
+      font-size: 23px;
+      color: #000;
+      background-color: $dark-yellow;
+      border: 3px solid #000;
+      margin-top: 15px;
+    }
+
+    .flex-center{
+      margin: auto;
+    }
+    .flex-left{
+      margin: auto auto auto 50px;
+    }
+    .ml-75{margin-left: 75px}
+    .ml-70{margin-left: 70px}
+    .ml-60{margin-left: 60px}
+    .ml-32{margin-left: 32px}
+    .flex-right{
+      margin: auto 0 auto auto;
+    }
+  }
+}
+.home-blocks{
+  padding: 150px 0;
+  .home-feature{
+    text-align: center;
+    .img-box{
+      display: block;
+      width: 140px;
+      background-color: #fff;
+      margin: auto auto 15px auto;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      border: 3px solid #000;
+      border-radius: 8px;
+      text-align: center;
+
+    }
+    img{
+      max-height: 80px;
+    }
+
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+  .home-slider{
+    .carousel-item{
+      height: 400px;
+      background-position: bottom center;
+      background-size: 300px auto;
+
+      .flex{
+        height: 200px;
+        .flex-left, .flex-center{
+          margin: auto;
+          text-align: center;
+          h1, h2{
+            text-align: center;
+          }
+          h1{
+            font-size: 40px;
+          }
+          h2{
+            font-size: 30px;
+          }
+
+          .pink-btn {
+            font-size: 16px;
+          }
+          .ylw-btn {
+            font-size: 16px;
+          }
+          .ml-75{ margin-left: auto;}
+          .ml-65{ margin-left: auto;}
+          .ml-60{ margin-left: auto;}
+          .ml-32{ margin-left: auto;}
+          .ml-70{ margin-left: auto;}
+        }
+
+      }
+    }
+
+    .item-three.carousel-item{
+      .flex{
+        height: 400px;
+      }
+    }
+
+    .item-four .post-thumb {
+      right: 0;
+      left: 0;
+      margin: auto;
+      top: auto;
+      bottom: 55px;
+      width: 250px;
+      height: 150px;
+    }
+  }
+  .home-blocks{
+    padding: 60px 0 20px 0;
+
+    .home-feature{
+      margin-bottom: 40px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px){
+  .home-blocks{
+    .col-md-2 {
+      -ms-flex: 0 0 25% !important;
+      flex: 0 0 25% !important;
+      max-width: 25% !important;
+    }
+  }
+}
+
+@import "footer";
+

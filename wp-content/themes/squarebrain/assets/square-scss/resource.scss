@@ -1,0 +1,79 @@
+@import "variables";
+
+body{
+  font-family: 'Chewy', cursive;
+  font-size: 14px;
+  color: #231f20;
+}
+@import "navbar";
+.ylw-btn{
+  font-size: 17px;
+  color: #000;
+  background-color: $dark-yellow;
+  border: 3px solid #000;
+}
+.bg-wrapper{
+  padding-top: 35px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.resource-block{
+  padding: 90px 0 150px 0;
+  h1{
+    font-size: 80px;
+    margin-bottom: 10px;
+    color: #000;
+    line-height: 0.9;
+    font-family: "Chinese Rocks Rg", Roboto, serif;
+  }
+
+  .home-feature{
+    text-align: center;
+    margin-top: 100px;
+    .img-box{
+      display: block;
+      width: 150px;
+      background-color: #fff;
+      margin: auto auto 15px auto;
+      padding: 30px 10px;
+      box-sizing: border-box;
+      border: 3px solid #000;
+      border-radius: 8px;
+      text-align: center;
+
+    }
+    img{
+      max-height: 80px;
+    }
+
+  }
+}
+@media (min-width: 320px) and (max-width: 767px){
+  .resource-block{
+    padding: 50px 0;
+    h1{
+      font-size: 40px;
+    }
+    .home-feature{
+      margin-top: 50px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px){
+  .resource-block{
+    padding: 60px 0;
+    h1{
+      font-size: 50px;
+    }
+    .col-md-2{
+      -ms-flex: 0 0 25% !important;
+      flex: 0 0 25% !important;
+      max-width: 25% !important;
+    }
+    .home-feature{
+      margin-top: 60px;
+    }
+  }
+}
+@import "footer";

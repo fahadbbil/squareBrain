@@ -1,0 +1,92 @@
+2020-08-21T03:54:32+00:00 CRITICAL syntax error, unexpected '?', expecting end of file in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 188
+
+2020-08-21T03:54:42+00:00 CRITICAL syntax error, unexpected '?', expecting end of file in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 188
+
+2020-08-21T04:08:20+00:00 CRITICAL syntax error, unexpected '*', expecting end of file in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 214
+
+2020-08-21T04:08:44+00:00 CRITICAL syntax error, unexpected '*', expecting end of file in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 214
+
+2020-08-21T04:09:15+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function woo_cart_but_count(), 0 passed in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\header.php on line 49 and exactly 1 expected in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php:220
+Stack trace:
+#0 C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\header.php(49): woo_cart_but_count()
+#1 C:\xampp\htdocs\squarebrain\wp-includes\template.php(723): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\squarebrain\wp-includes\template.php(672): load_template('C:\\xampp\\htdocs...', true)
+#3 C:\xampp\htdocs\squarebrain\wp-includes\general-template.php(41): locate_template(Array, true)
+#4 C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\page-products.php(5): get_header()
+#5 C:\xampp\htdocs\squarebrain\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\squarebrain\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\squarebrain\index.php(17):  in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 220
+
+2020-08-21T04:14:27+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function woo_cart_but_count(), 0 passed in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\header.php on line 46 and exactly 1 expected in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php:220
+Stack trace:
+#0 C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\header.php(46): woo_cart_but_count()
+#1 C:\xampp\htdocs\squarebrain\wp-includes\template.php(723): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\squarebrain\wp-includes\template.php(672): load_template('C:\\xampp\\htdocs...', true)
+#3 C:\xampp\htdocs\squarebrain\wp-includes\general-template.php(41): locate_template(Array, true)
+#4 C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\page-products.php(5): get_header()
+#5 C:\xampp\htdocs\squarebrain\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\squarebrain\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\squarebrain\index.php(17):  in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 220
+
+2020-08-21T05:10:00+00:00 CRITICAL syntax error, unexpected '.' in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\footer.php on line 28
+
+2020-08-21T05:10:04+00:00 CRITICAL syntax error, unexpected '.' in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\footer.php on line 28
+
+2020-08-21T05:10:10+00:00 CRITICAL syntax error, unexpected '.' in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\footer.php on line 28
+
+2020-08-21T05:10:18+00:00 CRITICAL syntax error, unexpected '.' in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\footer.php on line 28
+
+2020-08-21T05:10:28+00:00 CRITICAL syntax error, unexpected '.' in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\footer.php on line 28
+
+2020-08-21T05:31:19+00:00 CRITICAL Uncaught Error: Call to a member function get_setting() on string in C:\xampp\htdocs\squarebrain\wp-includes\class-wp-customize-control.php:234
+Stack trace:
+#0 C:\xampp\htdocs\squarebrain\wp-includes\customize\class-wp-customize-media-control.php(57): WP_Customize_Control->__construct('squarebrain_foo...', Array, Array)
+#1 C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\inc\customizer.php(54): WP_Customize_Media_Control->__construct('squarebrain_foo...', Array)
+#2 C:\xampp\htdocs\squarebrain\wp-includes\class-wp-hook.php(287): squarebrain_customize_register(Object(WP_Customize_Manager))
+#3 C:\xampp\htdocs\squarebrain\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\squarebrain\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\squarebrain\wp-includes\class-wp-customize-manager.php(928): do_action('customize_regis...', Object(WP_Customize_Manager))
+#6 C:\xampp\htdocs\squarebrain\wp-includes\class-wp-hook.php(287): WP_Customize_Manager-> in C:\xampp\htdocs\squarebrain\wp-includes\class-wp-customize-control.php on line 234
+
+2020-08-21T05:31:20+00:00 CRITICAL Uncaught Error: Call to a member function get_setting() on string in C:\xampp\htdocs\squarebrain\wp-includes\class-wp-customize-control.php:234
+Stack trace:
+#0 C:\xampp\htdocs\squarebrain\wp-includes\customize\class-wp-customize-media-control.php(57): WP_Customize_Control->__construct('squarebrain_foo...', Array, Array)
+#1 C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\inc\customizer.php(54): WP_Customize_Media_Control->__construct('squarebrain_foo...', Array)
+#2 C:\xampp\htdocs\squarebrain\wp-includes\class-wp-hook.php(287): squarebrain_customize_register(Object(WP_Customize_Manager))
+#3 C:\xampp\htdocs\squarebrain\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\squarebrain\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\squarebrain\wp-includes\class-wp-customize-manager.php(928): do_action('customize_regis...', Object(WP_Customize_Manager))
+#6 C:\xampp\htdocs\squarebrain\wp-includes\class-wp-hook.php(287): WP_Customize_Manager-> in C:\xampp\htdocs\squarebrain\wp-includes\class-wp-customize-control.php on line 234
+
+2020-08-21T06:11:52+00:00 CRITICAL syntax error, unexpected '?' in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\footer.php on line 30
+
+2020-08-21T13:16:23+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 267
+
+2020-08-21T13:16:29+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 267
+
+2020-08-21T13:17:23+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:19:23+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:21:23+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:23:24+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:25:24+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:27:06+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:28:32+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:29:33+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:31:33+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:33:33+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:34:33+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:35:34+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
+2020-08-21T13:37:34+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in C:\xampp\htdocs\squarebrain\wp-content\themes\squarebrain\functions.php on line 266
+
