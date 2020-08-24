@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/lite-bootstrap.min.css">
-</head>
-<body>
     <form id="theme_options_form">
         phone: <input type="text" value="<?php echo get_theme_mod( 'squarebrain_phone_settings', false ); ?>" class="squarebrain_phone_settings">
         Email: <input type="email" value="<?php echo get_theme_mod( 'squarebrain_email_settings', false ); ?>" class="squarebrain_email_settings">
@@ -42,6 +36,8 @@
             <?php } ?>
         </div> 
         <small><span class="glyphicon glyphicon-plus gs"></span> Add more</small>
+        <br>
+
         <input class="submit_btn" type="submit" value="submit">
     </form>
     <script>
@@ -125,5 +121,4 @@
       })(jQuery);
 
     </script>
-</body>
-</html>
+

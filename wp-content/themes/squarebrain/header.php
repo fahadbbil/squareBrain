@@ -56,9 +56,9 @@
 	                    </button>
 	                </div>
                     <div class="search-block" id="search-area">
-                        <form class="navbar-form" action="" method="" role="search">
+                        <form class="navbar-form" action="<?php echo home_url( '/' );?> " method="get" role="search" id="searchform">
                             <div class="form-group">
-                                <input type="text" name="" class="form-control" placeholder="Search" value="">
+                                <input type="text" name="s" id="s" class="form-control" placeholder="Search" value="<?php echo get_search_query();?>">
                             </div>
                             <button type="submit" class="btn bg-black button-fix"><i class="fa fa-search color-white"></i>
                             </button>

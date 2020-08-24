@@ -218,7 +218,7 @@ function theme_options_menu() {
 		'dashicons-schedule',
 		3
 	);
-	add_action( 'admin_enqueue_scripts', 'theme_options_include_js' );
+	add_action( 'admin_enqueue_scripts', 'theme_options_include_script' );
 }
 
 add_action( 'admin_menu', 'theme_options_menu' );
@@ -232,15 +232,16 @@ function my_admin_page_contents() {
 	require_once "inc/theme_options.php";
 }
 
-function theme_options_include_js() {
+function theme_options_include_script() {
  
 	// I recommend to add additional conditions just to not to load the scipts on each page
  
 	if ( ! did_action( 'wp_enqueue_media' ) ) {
 		wp_enqueue_media();
 	}
- 
- 	wp_enqueue_script( 'myuploadscript', get_template_directory_uri() . '/assets/js/customscript.js', array( 'jquery' ) );
+
+    wp_enqueue_style('themeOptionCSS',get_template_directory_uri().'/assets/css/lite-bootstrap.min.css');
+    wp_enqueue_script( 'myuploadscript', get_template_directory_uri() . '/assets/js/customscript.js', array( 'jquery' ) );
 }
 
 /*
