@@ -267,3 +267,26 @@ function updateThemeOptionsGeneral(){
 }
 add_action( 'wp_ajax_updateThemeOptionsGeneral', 'updateThemeOptionsGeneral' );
 add_action( 'wp_ajax_nopriv_updateThemeOptionsGeneral', 'updateThemeOptionsGeneral' );
+
+function page_bg(){
+    $image = '';
+    if (is_front_page()){
+        $image = get_template_directory_uri().'/assets/images/bg.png';
+    } elseif (is_woocommerce()){
+        $image = get_template_directory_uri().'/assets/images/product-bg.png';
+
+    } elseif (is_page('resources')) {
+        $image = get_template_directory_uri().'/assets/images/resources/additional-bg.png';
+
+    } elseif (is_page('about')) {
+        $image = get_template_directory_uri().'/assets/images/bg.png';
+
+    } elseif (is_page('products')) {
+        $image = get_template_directory_uri().'/assets/images/product-bg.png';
+    }
+    else {
+        $image = get_template_directory_uri().'/assets/images/bg.png';
+
+    }
+    return $image;
+}
