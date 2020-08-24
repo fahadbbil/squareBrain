@@ -272,7 +272,7 @@ function page_bg(){
     $image = '';
     if (is_front_page()){
         $image = get_template_directory_uri().'/assets/images/bg.png';
-    } elseif (is_woocommerce()){
+    } elseif (is_woocommerce() || is_checkout() || is_cart()){
         $image = get_template_directory_uri().'/assets/images/product-bg.png';
 
     } elseif (is_page('resources')) {
