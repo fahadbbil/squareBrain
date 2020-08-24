@@ -166,7 +166,7 @@ function squarebrain_scripts() {
 		wp_enqueue_style( 'resource-style', get_template_directory_uri() . '/assets/css/resource.css' );
 		
 	} elseif (is_page('products')) {
-		wp_enqueue_style( 'product-style', get_template_directory_uri() . '/assets/css/home.css' );
+		wp_enqueue_style( 'product-style', get_template_directory_uri() . '/assets/css/product.css' );
 		
 	} elseif (is_page('about')) {
 		wp_enqueue_style( 'about-style', get_template_directory_uri() . '/assets/css/about.css' );

@@ -16,6 +16,7 @@
   .nav-btn{
     position: absolute;
     right: 15px;
+    top: 6px;
   }
   .navbar-toggler:focus{
     color: $dark-yellow;
@@ -51,6 +52,7 @@
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 2px;
+        font-family: "Chewy", serif;
 
         &:hover{
           color: #fff;
@@ -97,7 +99,7 @@
 
     .nav-btn{
       position: relative;
-      top: 4px;
+      top: 0;
       margin-right: 40px;
       height: 29px;
 
@@ -107,7 +109,7 @@
       }
     }
     .navbar-toggler{
-      top: -4px;
+      top: -1px;
       position: absolute;
       right: -41px;
       padding-right: 0;

@@ -1,11 +1,89 @@
 @import "variables";
-
-body{
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: #231f20;
-}
 @import "navbar";
+
+.products-block{
+  padding: 50px 0
+}
+.bg-wrapper {
+  padding-top: 35px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.products-block h1{
+  font-size: 80px;
+  margin-bottom: 50px;
+  color: #000;
+  line-height: 0.9;
+  font-family: "Chinese Rocks Rg", Roboto, serif !important;
+}
+
+.woocommerce ul.products li.product a img{
+  margin: 0 0 5px;
+}
+
+.products-block .woocommerce{
+  font-family: Chewy, serif;
+}
+
+.add_to_cart_button{
+  margin-top: 15px;
+  font-size: 14px;
+  color: #fff !important;
+  font-weight: 500 !important;
+  letter-spacing: 0;
+  background-color: #CA487B !important;
+  border: 2px solid #000 !important;
+}
+
+.woocommerce a.added_to_cart {
+  padding-left: 10px;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title{
+  color: #000;
+}
+.woocommerce ul.products .price{
+  color: #CA487B !important;
+}
+
+.woocommerce ul.products li.product .button {
+  margin-top: 0.3em;
+}
+
+.woocommerce .added_to_cart{
+  color: #CA487B !important;
+}
+
+.products-block .woocommerce span.onsale {
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+  .products-block{
+    padding: 50px 0;
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .products-block{
+    padding: 60px 0;
+
+    h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
 @import "footer";
 
 
