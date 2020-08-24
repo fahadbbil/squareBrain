@@ -24,7 +24,7 @@
 	</footer>
 
 <?php 
-	if (!is_page( 'products' ) && !is_page( 'cart' )) {
+	if (!is_page( 'products' ) && !is_page( 'cart' ) && !is_single()) {
 
 ?>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.min.js"></script> 
