@@ -16,7 +16,7 @@
   .nav-btn{
     position: absolute;
     right: 15px;
-    top: 6px;
+    top: 8px;
   }
   .navbar-toggler:focus{
     color: $dark-yellow;
@@ -99,7 +99,7 @@
 
     .nav-btn{
       position: relative;
-      top: 0;
+      top: 3px;
       margin-right: 40px;
       height: 29px;
 
@@ -109,7 +109,7 @@
       }
     }
     .navbar-toggler{
-      top: -1px;
+      top: -3px;
       position: absolute;
       right: -41px;
       padding-right: 0;
