@@ -32,6 +32,13 @@
 <?php 
 	}
 ?>
+<script>
+    (function (){
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    })(jQuery);
+</script>
 
 <?php wp_footer(); ?>
 </body>
