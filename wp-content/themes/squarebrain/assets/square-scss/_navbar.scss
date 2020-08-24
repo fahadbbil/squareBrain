@@ -18,6 +18,12 @@
     right: 15px;
     top: 8px;
   }
+
+  .nav-btn > a:focus{
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+  }
   .navbar-toggler:focus{
     color: $dark-yellow;
     outline: 0;
