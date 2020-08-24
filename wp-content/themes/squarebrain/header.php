@@ -31,7 +31,7 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'squarebrain' ); ?></a>
-	<div style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg.png')" class="bg-wrapper">
+	<div style="background-image: url('<?php echo page_bg();?>')" class="bg-wrapper">
 		<header id="masthead" class="site-header">
 	        <nav class="navbar navbar-expand-lg navbar-default" style="padding-right: 0; padding-left: 0">
 	            <div class="container pr">
