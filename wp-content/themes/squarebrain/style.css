@@ -1010,5 +1010,9 @@ body.page, body.post{
 	background-color: #E5BD3E;
 	border: 2px solid #000;
 }
+
+.bg-wrapper{
+	background-attachment: fixed;
+}
 /*default layout css for all page*/
 
