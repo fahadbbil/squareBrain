@@ -32,13 +32,6 @@
 <?php 
 	}
 ?>
-<script>
-    (function ($){
-        $(document).('ready',function (){
-            $('.woocommerce-page article')
-        });
-    })(jQuery);
-</script>
 
 <?php wp_footer(); ?>
 </body>
