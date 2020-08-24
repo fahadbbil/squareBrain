@@ -1,45 +1,68 @@
-    <form id="theme_options_form">
-        phone: <input type="text" value="<?php echo get_theme_mod( 'squarebrain_phone_settings', false ); ?>" class="squarebrain_phone_settings">
-        Email: <input type="email" value="<?php echo get_theme_mod( 'squarebrain_email_settings', false ); ?>" class="squarebrain_email_settings">
-        Footer Logo:
-        <?php 
-          if( $image =get_theme_mod( 'squarebrain_footer_logo_settings', false ) ) {
-           
-            echo '<a href="#" class="theme_options_upl"><img src="' . $image . '" /></a>
-                  <a href="#" class="theme_options_rmv">Remove image</a>';
-           
-          } else {
-           
-            echo '<a href="#" class="theme_options_upl">Upload image</a>
-                  <a href="#" class="theme_options_rmv" style="display:none">Remove image</a>';
-           
-          }
-        ?>
+    <div class="row">
+        <div class="col-md-12">
+            <form id="theme_options_form">
+                <div class="row">
+                    <div class="col-md-3">
 
-        <div id="myRepeatingFields">
-          <?php 
-            $squarebrain_features = get_theme_mod('squarebrain_features_settings', json_encode( array()) );
-            $squarebrain_features_decoded = json_decode($squarebrain_features);;
-            foreach($squarebrain_features_decoded as $squarebrain_features_item){
-          ?>
-          <div class="entry input-group col-xs-3">
-              <input class="form-control button_title" name="title_fields[]" type="text" placeholder="Button Text" value="<?php echo  $squarebrain_features_item->title;?>" />
-              <input class="form-control button_link" name="link_fields[]" type="text" placeholder="Button Link" value="<?php echo  $squarebrain_features_item->link;?>" />
-              <a href="#" class="feature_upl" name="feature_img[]"><img src="<?php echo  $squarebrain_features_item->image_url;?>" /></a>
-              <a href="#" class="feature_rmv">Remove image</a>
-              <span class="input-group-btn">
+                        <label for="">phone: </label><input type="text" value="<?php echo get_theme_mod( 'squarebrain_phone_settings', false ); ?>" class="squarebrain_phone_settings">
+                    </div>
+                    <div class="col-md-3">
+
+                        <label for="">Email: </label><input type="email" value="<?php echo get_theme_mod( 'squarebrain_email_settings', false ); ?>" class="squarebrain_email_settings">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Footer Logo: </label>
+                        <?php
+                        if( $image =get_theme_mod( 'squarebrain_footer_logo_settings', false ) ) {
+
+                            echo '<a href="#" class="theme_options_upl"><img src="' . $image . '" /></a>
+                              <a href="#" class="theme_options_rmv">Remove image</a>';
+
+                        } else {
+
+                            echo '<a href="#" class="theme_options_upl">Upload image</a>
+                              <a href="#" class="theme_options_rmv" style="display:none">Remove image</a>';
+
+                        }
+                        ?>
+                    </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div id="myRepeatingFields">
+                        <?php
+                        $squarebrain_features = get_theme_mod('squarebrain_features_settings', json_encode( array()) );
+                        $squarebrain_features_decoded = json_decode($squarebrain_features);
+
+                        foreach($squarebrain_features_decoded as $squarebrain_features_item){
+                            ?>
+                            <div class="entry input-group">
+                                <input class="form-control button_title" name="title_fields[]" type="text" placeholder="Button Text" value="<?php echo  $squarebrain_features_item->title;?>" />
+                                <input class="form-control button_link" name="link_fields[]" type="text" placeholder="Button Link" value="<?php echo  $squarebrain_features_item->link;?>" />
+                                <a href="#" class="feature_upl" name="feature_img[]"><img src="<?php echo  $squarebrain_features_item->image_url;?>" /></a>
+                                <a href="#" class="feature_rmv">Remove image</a>
+                                <span class="input-group-btn">
                   <button type="button" class="btn btn-success btn-lg btn-add">
                       <span class="glyphicon glyphicon-plus" aria-hidden="true">add</span>
                   </button>
               </span>
-          </div>
-            <?php } ?>
-        </div> 
-        <small><span class="glyphicon glyphicon-plus gs"></span> Add more</small>
-        <br>
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <small><span class="glyphicon glyphicon-plus gs"></span> Add more</small>
+                </div>
+            </div>
 
-        <input class="submit_btn" type="submit" value="submit">
-    </form>
+                <input class="submit_btn" type="submit" value="submit">
+            </form>
+        </div>
+    </div>
     <script>
       (function($){
         'use strict';

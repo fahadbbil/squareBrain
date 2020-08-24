@@ -249,15 +249,22 @@ function theme_options_include_script() {
 */
 
 function updateThemeOptionsGeneral(){
-	// echo "<pre>";print_r($_POST);echo "</pre>";
-	$button_title = $_POST['button_title'];
-	$button_link = $_POST['button_link'];
-	$feature_img = $_POST['feature_img'];
+//	 echo "<pre>";print_r($_POST);echo "</pre>";
+    $button_title = $_POST['button_title'];
+    $button_link = $_POST['button_link'];
+    $feature_img = $_POST['feature_img'];
+    $squarebrain_features_settings = array();
 
-	foreach ($button_title as $key => $value) {
-		$squarebrain_features_settings = json_encode(["color" =>"","text" =>"undefined","link" =>$button_link[$key],"text2" =>"undefined","image_url" =>$feature_img[$key],"title" =>$value,"subtitle" =>"undefined","social_repeater" =>"undefined","id" =>"social-repeater-5f3fd1bc881f1","shortcode" =>"undefined"]);
-	}
-	$squarebrain_features_settings = "[".$squarebrain_features_settings."]";
+    foreach ($button_title as $key => $value) {
+        $squarebrain_features_settings[]=array(
+                'title' =>$button_title[$key],
+                'link' =>$button_link[$key],
+                'image_url' =>$feature_img[$key]
+        );
+    }
+
+    $squarebrain_features_settings = json_encode($squarebrain_features_settings);
+
 
 	set_theme_mod( 'squarebrain_features_settings', $squarebrain_features_settings );
 	set_theme_mod( 'squarebrain_phone_settings', $_POST['squarebrain_phone_settings'] );
