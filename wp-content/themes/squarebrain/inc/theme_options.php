@@ -183,7 +183,6 @@
                                     </div>
                                 </div>
 
-<<<<<<< HEAD
                                 <div class="panel-footer">
                                     <button class="submit_btn btn btn-primary" type="button">Save</button>
                                 </div>
@@ -456,27 +455,9 @@
 
 
         $(document).ready(function(){
-<<<<<<< HEAD
             var ajaxUrl =   "<?php echo admin_url('admin-ajax.php'); ?>";
             $(".change_squarebrain_footer_logo_settings").on("change",function(){
 
-=======
-          var ajaxUrl =   "<?php echo admin_url('admin-ajax.php'); ?>";
-          $(".change_squarebrain_footer_logo_settings").on("change",function(){
-
-          });
-
-          $("#theme_options_form").on("submit",function(e){
-            e.preventDefault();
-            var phone = $(".squarebrain_phone_settings").val();
-            var email = $(".squarebrain_email_settings").val();
-            var footer_logo_img = $(".theme_options_upl img").attr('src');
-
-            var button_title = [];
-            $('.button_title').each(function(){
-                button_title.push($(this).val());
-
->>>>>>> f458528f83d2da6f4629c0b12b5d52f1131bfc96
             });
 
             $("#theme_options_form").on("submit",function(e){
@@ -531,7 +512,6 @@
         });
 
         $(document).on('click', '.btn-add', function(e)
-<<<<<<< HEAD
         {
             e.preventDefault();
             var controlForm = $('#myRepeatingFields:first'),
@@ -553,26 +533,4 @@
     })(jQuery);
 
 </script>
-=======
-          {
-              e.preventDefault();
-              var controlForm = $('#myRepeatingFields:first'),
-                  currentEntry = $(this).parents('.entry:first'),
-                  newEntry = $(currentEntry.clone()).appendTo(controlForm);
-              newEntry.find('input').val('');
-              controlForm.find('.entry:not(:last) .btn-add')
-                  .removeClass('btn-add').addClass('btn-remove')
-                  .removeClass('btn-success').addClass('btn-danger')
-                  .html('');
-              $(".btn-remove").text("X");
-          }).on('click', '.btn-remove', function(e)
-          {
-              e.preventDefault();
-              $(this).parents('.entry:first').remove();
-              return false;
-          });
-      })(jQuery);
-
-    </script>
->>>>>>> f458528f83d2da6f4629c0b12b5d52f1131bfc96
 
