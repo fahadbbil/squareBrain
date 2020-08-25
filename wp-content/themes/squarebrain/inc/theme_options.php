@@ -277,13 +277,13 @@
             html += '<label>Footer Logo</label><br>';
             html += '<div class="attachment-box">';
             html += '<div class="attachment-btn">';
-            html += '<input id="my-file-selector'+count+'" type="file" class="hidden attach-file'+count+'" name="image" accept="image/*">';
+            html += '<input id="my-file-selector'+count+'" type="file" class="hidden attach-file" name="image" accept="image/*">';
             html += '<label for="my-file-selector'+count+'" class="btn btn-default btn-sm">Browse</label>';
-            html += '<button type="button" class="btn btn-danger btn-sm img_remove'+count+'">Remove</button>';
+            html += '<button type="button" class="btn btn-danger btn-sm img_remove">Remove</button>';
             html += '</div>';
 
             html += '<div class="attachment-file-view">';
-            html += '<img class="src-img'+count+' img-box-normal" src="https://via.placeholder.com/200x66">';
+            html += '<img class="src-img img-box-normal" src="https://via.placeholder.com/200x66">';
             html += '</div>';
             html += '</div>';
             html += '</div>';
@@ -315,117 +315,6 @@
         $(document).on("change", ".attach-file", function () {
             readImgURLCommon(this);
         });
-
-      /* append 1 js*/
-        $(document).on("click", '.img_remove1', function () {
-            $('.attach-file1').val('');
-            $('.src-img1').attr('src', "https://via.placeholder.com/200x66");
-        });
-        function readImgURLCommon1(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('.src-img1').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $(document).on("change", ".attach-file1", function () {
-            readImgURLCommon1(this);
-        });
-        /* append 1 js*/
-
-
-
-        /* append 2 js*/
-        $(document).on("click", '.img_remove2', function () {
-            $('.attach-file2').val('');
-            $('.src-img2').attr('src', "https://via.placeholder.com/200x66");
-        });
-        function readImgURLCommon2(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('.src-img2').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $(document).on("change", ".attach-file2", function () {
-            readImgURLCommon2(this);
-        });
-        /* append 2 js*/
-
-        /* append 3 js*/
-        $(document).on("click", '.img_remove3', function () {
-            $('.attach-file3').val('');
-            $('.src-img3').attr('src', "https://via.placeholder.com/200x66");
-        });
-        function readImgURLCommon3(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('.src-img3').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $(document).on("change", ".attach-file3", function () {
-            readImgURLCommon3(this);
-        });
-        /* append 3 js*/
-
-        /* append 4 js*/
-        $(document).on("click", '.img_remove4', function () {
-            $('.attach-file4').val('');
-            $('.src-img4').attr('src', "https://via.placeholder.com/200x66");
-        });
-        function readImgURLCommon4(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('.src-img4').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $(document).on("change", ".attach-file4", function () {
-            readImgURLCommon4(this);
-        });
-        /* append 4 js*/
-
-
-        /* append 4 js*/
-        $(document).on("click", '.img_remove5', function () {
-            $('.attach-file5').val('');
-            $('.src-img5').attr('src', "https://via.placeholder.com/200x66");
-        });
-        function readImgURLCommon5(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('.src-img5').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $(document).on("change", ".attach-file5", function () {
-            readImgURLCommon5(this);
-        });
-        /* append 5 js*/
-
-
-
 
 
 
