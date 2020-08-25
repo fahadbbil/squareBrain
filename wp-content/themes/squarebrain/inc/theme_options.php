@@ -271,6 +271,7 @@
             html += '<div class="col-md-2">';
             html += '<label for="" style="visibility: hidden">no text</label>';
             html += '<button type="button" class="remove-btn btn btn-danger btn-block"><span class="glyphicon glyphicon-minus gs"></span></button>';
+            html += '<button type="button" class="btn btn-primary btn-sm add-btn btn-block"><span class="glyphicon glyphicon-plus gs"></span></button>';
             html += '</div>';
             html += '</div>';
             html += '<div class="form-group mb-0">';
@@ -279,7 +280,7 @@
             html += '<div class="attachment-btn">';
             html += '<input id="my-file-selector'+count+'" type="file" class="hidden attach-file" name="image" accept="image/*">';
             html += '<label for="my-file-selector'+count+'" class="btn btn-default btn-sm">Browse</label>';
-            html += '<button type="button" class="btn btn-danger btn-sm img_remove">Remove</button>';
+            html += '<button type="button" class="btn btn-danger btn-sm img_remove">Remove </button>';
             html += '</div>';
 
             html += '<div class="attachment-file-view">';
