@@ -8,6 +8,8 @@
         cursor: pointer;
         background-color: #337ab7;
     }
+    .pr{position: relative; padding-right: 80px;}
+    .pr .abs-btn{position: absolute; top: 0; right: 0}
 </style>
 
     <div class="update-nag" style="width: 100%">
@@ -69,8 +71,49 @@
                                <div class="row">
                                    <div class="col-md-10">
                                        <div class="panel panel-default">
-                                           <div class="panel-heading"><b>General Setting</b></div>
+                                           <div class="panel-heading"><b>Home Feature List</b></div>
                                            <div class="panel-body">
+                                               <div id="myRepeatingFields">
+                                                   <?php
+                                                   $squarebrain_features = get_theme_mod('squarebrain_features_settings', json_encode( array()) );
+                                                   $squarebrain_features_decoded = json_decode($squarebrain_features);
+
+                                                   foreach($squarebrain_features_decoded as $squarebrain_features_item){
+                                                       ?>
+                                                       <div class="entry input-group pr">
+                                                           <div class="panel-default panel-body panel">
+                                                               <div class="row">
+                                                                   <div class="col-md-6">
+                                                                       <div class="form-group">
+                                                                           <label for="">Button title</label>
+                                                                           <input class="form-control button_title" name="title_fields[]" type="text" placeholder="Button Text" value="<?php echo  $squarebrain_features_item->title;?>" />
+                                                                       </div>
+                                                                   </div>
+                                                                   <div class="col-md-6">
+                                                                       <div class="form-group">
+                                                                           <label for="">Button Link</label>
+                                                                           <input class="form-control button_link" name="link_fields[]" type="text" placeholder="Button Link" value="<?php echo  $squarebrain_features_item->link;?>" />
+                                                                       </div>
+                                                                   </div>
+                                                                   <div class="col-md-12">
+                                                                       <br>
+                                                                       <label for="">Feature Image</label> <br>
+                                                                       <a href="javascript:void(0)" class="feature_upl" style="display: block" name="feature_img[]"><img style="margin-top: 10px;" src="<?php echo  $squarebrain_features_item->image_url;?>" /></a>
+                                                                       <br><a href="javascript:void(0)" class="feature_rmv btn btn-danger">Remove image</a>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                           <button type="button" class="btn btn-success btn-add abs-btn">
+                                                               <span class="glyphicon glyphicon-plus" aria-hidden="true">Add</span>
+                                                           </button>
+                                                       </div>
+                                                   <?php } ?>
+                                               </div>
+                                           </div>
+
+                                           <div class="panel-footer">
+                                               <small class="btn btn-default"><span class="glyphicon glyphicon-plus gs"></span> Add more</small>
+                                               <input class="submit_btn btn btn-primary" type="submit" value="submit">
                                            </div>
                                        </div>
                                    </div>
@@ -82,9 +125,40 @@
                                        <div class="panel panel-default">
                                            <div class="panel-heading"><b>Resource Features</b></div>
                                            <div class="panel-body">
-                                               <div class="form-group">
+                                                <div id="resource_myRepeatFields">
+                                                    <div class="entry input-group pr">
+                                                        <div class="panel-default panel-body panel">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="">Button title</label>
+                                                                        <input class="form-control resource_button_title" name="resource_title_fields[]" type="text" placeholder="Button Text" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="">Button Link</label>
+                                                                        <input class="form-control resource_button_link" name="resource_link_fields[]" type="text" placeholder="Button Link" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <br>
+                                                                    <label for="">Resource Feature Image</label> <br>
+                                                                    <a href="javascript:void(0)" class="resource_feature_upl" style="display: block" name="resource_feature_img[]"><img style="margin-top: 10px;" src="http://localhost/squarebrain/wp-content/uploads/2020/08/icon-2.png"></a>
+                                                                    <br><a href="javascript:void(0)" class="resource_feature_rmv btn btn-danger">Remove image</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn btn-success btn-add abs-btn">
+                                                            <span class="glyphicon glyphicon-plus">Add</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                           </div>
 
-                                               </div>
+                                           <div class="panel-footer">
+                                               <small class="btn btn-default"><span class="glyphicon glyphicon-plus gs"></span> Add more</small>
+                                               <input class="resource_submit_btn btn btn-primary" type="submit" value="submit">
                                            </div>
                                        </div>
                                    </div>
@@ -93,38 +167,7 @@
                        </div>
                    </div>
                 </div>
-
-
-            <div class="row">
-                <div class="col-md-6">
-
-                    <div id="myRepeatingFields">
-                        <?php
-                        $squarebrain_features = get_theme_mod('squarebrain_features_settings', json_encode( array()) );
-                        $squarebrain_features_decoded = json_decode($squarebrain_features);
-
-                        foreach($squarebrain_features_decoded as $squarebrain_features_item){
-                            ?>
-                            <div class="entry input-group">
-                                <input class="form-control button_title" name="title_fields[]" type="text" placeholder="Button Text" value="<?php echo  $squarebrain_features_item->title;?>" />
-                                <input class="form-control button_link" name="link_fields[]" type="text" placeholder="Button Link" value="<?php echo  $squarebrain_features_item->link;?>" />
-                                <a href="javascript:void(0)" class="feature_upl" name="feature_img[]"><img src="<?php echo  $squarebrain_features_item->image_url;?>" /></a>
-                                <a href="javascript:void(0)" class="feature_rmv">Remove image</a>
-                                <span class="input-group-btn">
-                                  <button type="button" class="btn btn-success btn-lg btn-add">
-                                      <span class="glyphicon glyphicon-plus" aria-hidden="true">add</span>
-                                  </button>
-                                </span>
-                            </div>
-                        <?php } ?>
-                    </div>
-                    <small><span class="glyphicon glyphicon-plus gs"></span> Add more</small>
-                </div>
-            </div>
-
-                <input class="submit_btn" type="submit" value="submit">
             </form>
-
     <script>
       (function($){
         'use strict';
