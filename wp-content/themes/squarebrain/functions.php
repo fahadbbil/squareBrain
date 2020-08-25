@@ -240,7 +240,7 @@ function theme_options_include_script() {
 		wp_enqueue_media();
 	}
 
-    wp_enqueue_style('themeOptionCSS',get_template_directory_uri().'/assets/css/lite-bootstrap.min.css');
+    wp_enqueue_style('themeOptionCSS','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     wp_enqueue_script( 'myuploadscript', get_template_directory_uri() . '/assets/js/customscript.js', array( 'jquery' ) );
 }
 
