@@ -16,8 +16,7 @@
         Theme Options
     </div>
 
-     <form id="theme_options_form" class="mt-2">
-                <div class="row">
+<div class="row">
                     <div class="col-md-3">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs options-nav" role="tablist">
@@ -71,7 +70,7 @@
                                <div class="row">
                                    <div class="col-md-10">
                                        <div class="panel panel-default">
-                                           <div class="panel-heading"><b>Home Feature List</b></div>
+                                           <div class="panel-heading"><b>Feature List</b></div>
                                            <div class="panel-body">
                                                <div id="myRepeatingFields">
                                                    <?php
@@ -119,62 +118,16 @@
                                    </div>
                                </div>
                            </div>
-                           <div role="tabpanel" class="tab-pane" id="resource-feature-lists">
-                               <div class="row">
-                                   <div class="col-md-10">
-                                       <div class="panel panel-default">
-                                           <div class="panel-heading"><b>Resource Features</b></div>
-                                           <div class="panel-body">
-                                                <div id="resource_myRepeatFields">
-                                                    <div class="entry input-group pr">
-                                                        <div class="panel-default panel-body panel">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="">Button title</label>
-                                                                        <input class="form-control resource_button_title" name="resource_title_fields[]" type="text" placeholder="Button Text" value="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="">Button Link</label>
-                                                                        <input class="form-control resource_button_link" name="resource_link_fields[]" type="text" placeholder="Button Link" value="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <br>
-                                                                    <label for="">Resource Feature Image</label> <br>
-                                                                    <a href="javascript:void(0)" class="resource_feature_upl" style="display: block" name="resource_feature_img[]"><img style="margin-top: 10px;" src="http://localhost/squarebrain/wp-content/uploads/2020/08/icon-2.png"></a>
-                                                                    <br><a href="javascript:void(0)" class="resource_feature_rmv btn btn-danger">Remove image</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button type="button" class="btn btn-success btn-add abs-btn">
-                                                            <span class="glyphicon glyphicon-plus">Add</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                           </div>
-
-                                           <div class="panel-footer">
-                                               <small class="btn btn-default"><span class="glyphicon glyphicon-plus gs"></span> Add more</small>
-                                               <input class="resource_submit_btn btn btn-primary" type="submit" value="submit">
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
                        </div>
                    </div>
                 </div>
-            </form>
     <script>
       (function($){
         'use strict';
         $(document).ready(function(){
           var ajaxUrl =   "<?php echo admin_url('admin-ajax.php'); ?>";
           $(".change_squarebrain_footer_logo_settings").on("change",function(){
-            
+
           });
 
           $("#theme_options_form").on("submit",function(e){
@@ -186,7 +139,7 @@
             var button_title = [];
             $('.button_title').each(function(){
                 button_title.push($(this).val());
-                
+
             });
 
             var button_link = [];
@@ -239,7 +192,7 @@
                   .removeClass('btn-add').addClass('btn-remove')
                   .removeClass('btn-success').addClass('btn-danger')
                   .html('');
-              $(".btn-remove").text("X");    
+              $(".btn-remove").text("X");
           }).on('click', '.btn-remove', function(e)
           {
               e.preventDefault();
