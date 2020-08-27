@@ -14,7 +14,7 @@
                             <span class="img-box">
                                 <img src="<?php echo  $squarebrain_features_item->image_url;?>" alt="">
                             </span>
-                            <a href="<?php echo  $squarebrain_features_item->link;?>" class="btn ylw-btn text-uppercase"><?php echo  $squarebrain_features_item->title;?></a>
+                            <a href="<?php echo  $squarebrain_features_item->link;?>" class="btn ylw-btn text-uppercase" target="_blank"><?php echo  $squarebrain_features_item->title;?></a>
                         </div>
                     </div>
                     <?php } ?>

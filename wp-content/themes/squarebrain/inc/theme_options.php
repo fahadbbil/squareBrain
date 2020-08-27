@@ -96,7 +96,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Button Link</label>
-                                                    <input class="form-control button_link" name="link_fields[]" type="text" placeholder="Button Link" value="<?php echo  $squarebrain_features_item->link;?>">
+                                                    <input class="form-control button_link" name="link_fields[]" type="url" placeholder="Button Link" value="<?php echo  $squarebrain_features_item->link;?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -137,7 +137,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Button Link</label>
-                                                    <input class="form-control button_link" name="link_fields[]" type="text" placeholder="Button Link" value="">
+                                                    <input class="form-control button_link" name="link_fields[]" type="url" placeholder="Button Link" value="">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -208,7 +208,7 @@
             html += '<div class="col-md-6">';
             html += '<div class="form-group">';
             html += '<label for="">Button Link</label>';
-            html += '<input class="form-control button_link" name="link_fields[]" type="text" placeholder="Button Link" value="">';
+            html += '<input class="form-control button_link" name="link_fields[]" type="url" placeholder="Button Link" value="">';
             html += '</div>';
             html += '</div>';
             html += '<div class="col-md-2">';
@@ -258,6 +258,18 @@
             })
             .open();
         });
+
+        /*URL Field Type*/
+
+        $(document).on('blur', 'input[type="url"]', function () {
+            var string = $(this).val();
+            if (!string.match(/^https?:/) && string.length) {
+                string = "http://" + string;
+                $(this).val(string)
+            }
+        });
+
+
 
 
        /* js for header setting */
