@@ -29,13 +29,14 @@
                                         <input id="email" class="form-control" type="email" value="<?php echo get_theme_mod( 'squarebrain_email_setting', 'test@test.com' ); ?>" class="squarebrain_email_settings">
                                     </div>
 
-                                    <div class="form-group mb-0">
-                                        <label>Header Logo</label><br>
+                                    <div class="col-md-6 mb-0">
+
                                         <div class="attachment-box">
                                             <div class="attachment-btn">
                                                 <label for="general-file-selector" id="header_logo_img_browse" class="btn btn-default btn-sm">
                                                     Browse
                                                 </label>
+                                                <label>Header Logo</label>
                                             </div>
 
                                             <div class="attachment-file-view">
@@ -45,13 +46,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group mb-0">
-                                        <label>Footer Logo</label><br>
+                                    <div class="col-md-6 mb-0">
+
                                         <div class="attachment-box">
                                             <div class="attachment-btn">
                                                 <label for="general-file-selector" id="footer_logo_img_browse" class="btn btn-default btn-sm">
                                                     Browse
                                                 </label>
+                                                <label>Footer Logo</label>
                                             </div>
 
                                             <div class="attachment-file-view">
