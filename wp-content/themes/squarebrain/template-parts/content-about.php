@@ -22,7 +22,7 @@
                     <img class="img-left" src="<?php echo ($bottom_about_image!=''?wp_get_attachment_image_src( $bottom_about_image)[0]:''); ?>" alt="">
                 </div>
                 <div class="col-md-6">
-                    <?php echo esc_html( get_post_meta( get_the_ID(), 'secondaryContent', true ) );?>
+                    <?php echo get_post_meta( get_the_ID(), 'secondaryContent', true ) ;?>
                 </div>
             </div>
         </div>

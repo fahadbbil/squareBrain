@@ -20,12 +20,12 @@ function custom_postimage_meta_box(){
                 'custom_postimage_meta_box',__( 'About Images', 'squarebrain'), // $id
                 'custom_postimage_meta_box_func',
                 'page',
-                'side',
+                'normal',
                 'low'
             );
 
             add_meta_box(
-                    'secondary_text',__('Secondary Content','squarebrain'),
+                    'secondary_text',__('Bottom Content','squarebrain'),
                 'secondaryContent',
                 'page',
                 'normal',
@@ -41,11 +41,12 @@ function custom_postimage_meta_box_func($post){
     $meta_keys = array('top_about_img','bottom_about_image');
     $si = 1;
     foreach($meta_keys as $meta_key){
+        $label_field = ($si == 1)  ? 'Tope Image' : 'Bottom Image';
         $image_meta_val=get_post_meta( $post->ID, $meta_key, true);
         ?>
         <div class="custom_postimage_wrapper" id="<?php echo $meta_key; ?>_wrapper" style="margin-bottom:20px;">
-            <img src="<?php echo ($image_meta_val!=''?wp_get_attachment_image_src( $image_meta_val)[0]:''); ?>" style="width:100%;display: <?php echo ($image_meta_val!=''?'block':'none'); ?>" alt="">
-            <a class="addimage button img_<?php echo $si;?>" onclick="custom_postimage_add_image('<?php echo $meta_key; ?>');"><?php _e('add image','squarebrain'); ?></a><br>
+            <img src="<?php echo ($image_meta_val!=''?wp_get_attachment_image_src( $image_meta_val)[0]:''); ?>" style="width:200px;display: <?php echo ($image_meta_val!=''?'block':'none'); ?>" alt="">
+            <a class="addimage button img_<?php echo $si;?>" onclick="custom_postimage_add_image('<?php echo $meta_key; ?>');"><?php _e($label_field,'squarebrain'); ?></a><br>
             <a class="removeimage" style="color:#aa0000;cursor:pointer;display: <?php echo ($image_meta_val!=''?'block':'none'); ?>" onclick="custom_postimage_remove_image('<?php echo $meta_key; ?>');"><?php _e('remove image','squarebrain'); ?></a>
             <input type="hidden" name="<?php echo $meta_key; ?>" id="<?php echo $meta_key; ?>" value="<?php echo $image_meta_val; ?>" />
         </div>
@@ -115,13 +116,15 @@ function custom_postimage_meta_box_save($post_id){
 
 
 function secondaryContent($post){
+    $text = get_post_meta( $post->ID, 'secondaryContent', true );
+    wp_editor( htmlspecialchars($text), 'mettaabox_ID', $settings = array('textarea_name'=>'meta[secondaryContent]') );
     ?>
-    <table width="100%">
+    <!--<table width="100%">
         <tr>
             <textarea name="meta[secondaryContent]" id="" style="width: 100%;" rows="10">
-                <?php echo esc_html( get_post_meta( $post->ID, 'secondaryContent', true ) );?>
+                <?php /*echo esc_html( get_post_meta( $post->ID, 'secondaryContent', true ) );*/?>
             </textarea>
-        </tr>
+        </tr>-->
     </table>
     <?php
 }
