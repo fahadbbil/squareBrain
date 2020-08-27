@@ -48,6 +48,7 @@ function updateThemeOptionsGeneral(){
 	set_theme_mod( 'squarebrain_email_setting', $_POST['squarebrain_email_setting'] );
 	set_theme_mod( 'squarebrain_footer_logo_setting', $_POST['squarebrain_footer_logo_setting'] );
 	set_theme_mod( 'squarebrain_header_logo_setting', $_POST['squarebrain_header_logo_setting'] );
+	set_theme_mod( 'squarebrain_copyright_setting', $_POST['squarebrain_copyright_setting'] );
 	echo $success = 200;
 	wp_die();
 }
@@ -70,7 +71,6 @@ function updateThemeOptionsFeatures(){
                 'image_url' =>$feature_img[$key]
         );
     }
-//    echo "<pre>";print_r($squarebrain_features_settings);echo "</pre>";
 
    $squarebrain_features_settings = json_encode($squarebrain_features_settings);
 	set_theme_mod( 'squarebrain_features_settings', $squarebrain_features_settings );

@@ -20,6 +20,14 @@
 	                </div>
 	            </div>
 	        </div>
+
+            <div class="row">
+	            <div class="col-md-12">
+	                <div class="footer_copyright">
+	                	<p><?php echo get_theme_mod( 'squarebrain_copyright_setting', '© Copyright '.date('Y').' Company Name. All rights reserved.' ); ?></p>
+	                </div>
+	            </div>
+	        </div>
 	    </div>
 	</footer>
 

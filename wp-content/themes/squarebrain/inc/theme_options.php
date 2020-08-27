@@ -29,6 +29,11 @@
                                         <input id="email" class="form-control" type="email" value="<?php echo get_theme_mod( 'squarebrain_email_setting', 'test@test.com' ); ?>" class="squarebrain_email_settings">
                                     </div>
 
+                                    <div class="form-group">
+                                        <label for="copyright_text">Copyright Text </label>
+                                        <input id="copyright_text" class="form-control" type="text" value="<?php echo get_theme_mod( 'squarebrain_copyright_setting', '© Copyright '.date('Y').' Company Name. All rights reserved.' ); ?>" class="squarebrain_email_settings">
+                                    </div>
+
                                     <div class="col-md-6 mb-0">
 
                                         <div class="attachment-box">
@@ -187,8 +192,6 @@
 <script>
     (function($){
         'use strict';
-
-
        /* custom js*/
        /*  repeated item js*/
         var count = 0;
@@ -241,7 +244,6 @@
 
 
         /*common function*/
-
         $(document).on('click', '.features_img_btn', function(e) {
             e.preventDefault();
             var btn_id = $(this).attr('id');
@@ -262,7 +264,6 @@
         });
 
         /*URL Field Type*/
-
         $(document).on('blur', 'input[type="url"]', function () {
             var string = $(this).val();
             if (!string.match(/^https?:/) && string.length) {
@@ -270,9 +271,6 @@
                 $(this).val(string)
             }
         });
-
-
-
 
        /* js for header setting */
         $('#header_logo_img_browse').click(function(e) {
@@ -315,8 +313,7 @@
        /* js for footer setting */
        /* custom js*/
 
-
-
+        /*Ajax call to save general settings*/
         $(document).ready(function(){
             var ajaxUrl =   "<?php echo admin_url('admin-ajax.php'); ?>";
 
@@ -326,13 +323,15 @@
                 var email = $("#email").val();
                 var header_logo_img = $("#header_file_name_set").val();
                 var footer_logo_img = $("#general_file_name_set").val();
+                var copyright_text = $('#copyright_text').val();
 
                 var ajaxData = {
-                    'action'        : 'updateThemeOptionsGeneral',
+                    'action'                            : 'updateThemeOptionsGeneral',
                     'squarebrain_phone_setting'         : phone,
                     'squarebrain_email_setting'         : email,
                     'squarebrain_header_logo_setting'   : header_logo_img,
                     'squarebrain_footer_logo_setting'   : footer_logo_img,
+                    'squarebrain_copyright_setting'     : copyright_text,
                 }
 
                 $.ajax({
@@ -352,7 +351,7 @@
                 });
             });
 
-            /*Features Data send to Ajax and save it to DB as theme_mod*/
+            //*Ajax call to save features settings*/
             $(document).on("click","#features_save",function(e){
                 e.preventDefault();
 
@@ -374,9 +373,9 @@
 
                 var ajaxData = {
                     'action'        : 'updateThemeOptionsFeatures',
-                    'button_title'                       : button_title,
-                    'button_link'                        : button_link,
-                    'feature_img'                        : feature_img,
+                    'button_title'  : button_title,
+                    'button_link'   : button_link,
+                    'feature_img'   : feature_img,
                 }
 
                 $.ajax({
