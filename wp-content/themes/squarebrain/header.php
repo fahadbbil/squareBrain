@@ -36,7 +36,7 @@
 	        <nav class="navbar navbar-expand-lg navbar-default" style="padding-right: 0; padding-left: 0">
 	            <div class="container pr">
 	                <a class="navbar-brand" href="<?php echo site_url(); ?>">
-	                    <img alt="Cluster Antivirus Logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
+	                    <img alt="Cluster Antivirus Logo" src="<?php echo get_theme_mod( 'squarebrain_header_logo_setting', get_template_directory_uri().'/assets/images/logo.png' );?>">
 	                </a>
 	                <div class="nav-btn">
 	                    <a title="Send Email" href="mailto:<?php echo get_theme_mod( 'squarebrain_email_setting', 'test@test.com' ); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-1.png"></a>

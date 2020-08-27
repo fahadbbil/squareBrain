@@ -44,9 +44,10 @@ function theme_options_include_script() {
 function updateThemeOptionsGeneral(){
 //	 echo "<pre>";print_r($_POST);echo "</pre>";
 
-	set_theme_mod( 'squarebrain_phone_settings', $_POST['squarebrain_phone_settings'] );
-	set_theme_mod( 'squarebrain_email_settings', $_POST['squarebrain_email_settings'] );
-	set_theme_mod( 'squarebrain_footer_logo_settings', $_POST['squarebrain_footer_logo_settings'] );
+	set_theme_mod( 'squarebrain_phone_setting', $_POST['squarebrain_phone_setting'] );
+	set_theme_mod( 'squarebrain_email_setting', $_POST['squarebrain_email_setting'] );
+	set_theme_mod( 'squarebrain_footer_logo_setting', $_POST['squarebrain_footer_logo_setting'] );
+	set_theme_mod( 'squarebrain_header_logo_setting', $_POST['squarebrain_header_logo_setting'] );
 	echo $success = 200;
 	wp_die();
 }
