@@ -19,6 +19,9 @@
                         <div class="col-md-10">
                             <div class="panel panel-default">
                                 <div class="panel-heading"><b>General Setting</b></div>
+
+                                <div class="general_notification alert alert-success hidden" role="alert">Saved successfully!</div>
+
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <label for="phone">Phone </label>
@@ -39,7 +42,7 @@
                                         <div class="attachment-box">
                                             <div class="attachment-btn">
                                                 <label for="general-file-selector" id="header_logo_img_browse" class="btn btn-default btn-sm">
-                                                    Browse
+                                                    <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
                                                 </label>
                                                 <label>Header Logo</label>
                                             </div>
@@ -56,7 +59,7 @@
                                         <div class="attachment-box">
                                             <div class="attachment-btn">
                                                 <label for="general-file-selector" id="footer_logo_img_browse" class="btn btn-default btn-sm">
-                                                    Browse
+                                                    <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
                                                 </label>
                                                 <label>Footer Logo</label>
                                             </div>
@@ -83,6 +86,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading"><b>Feature List</b></div>
                                 <div class="panel-body">
+                                    <div class="features_notification alert alert-success hidden" role="alert">Saved successfully!</div>
                                     <?php
                                     $squarebrain_features = get_theme_mod('squarebrain_features_settings', json_encode( array()) );
                                     /*This returns a json so we have to decode it*/
@@ -112,13 +116,13 @@
                                                 <button type="button" class="btn btn-primary btn-sm add-btn btn-block"><span class="glyphicon glyphicon-plus gs"></span></button>
                                             </div>
                                         </div>
-                                        <div class="form-group mb-0">
+                                        <div class="form-group">
                                             <label>Image</label><br>
                                             <div class="attachment-box">
                                                 <div class="attachment-btn">
 <!--                                                    <input id="my-file-selector" type="file" class="hidden attach-file" name="image" accept="image/*">-->
                                                     <label for="my-file-selector" class="btn btn-default btn-sm features_img_btn" id="<?php echo $count;?>">
-                                                        Browse
+                                                        <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
                                                     </label>
                                                 </div>
 
@@ -127,6 +131,18 @@
                                                     <img class="src-img img-box-normal repeater_img_pr" id="src-img<?php echo $count;?>" src="<?php echo  $squarebrain_features_item->image_url;?>">
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Page Location</label><br>
+                                            <label class="radio-inline">
+                                                <input type="radio" <?php if ($squarebrain_features_item->page_location == 'home') echo 'checked="checked"'; ?> name="page_location<?php echo $count;?>" class="page_location_val" value="home">Home
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" <?php if ($squarebrain_features_item->page_location == 'resources') echo 'checked="checked"'; ?> name="page_location<?php echo $count;?>" class="page_location_val" value="resources">Resources
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" <?php if ($squarebrain_features_item->page_location == 'both') echo 'checked="checked"'; ?> name="page_location<?php echo $count;?>" class="page_location_val" value="both">Both
+                                            </label>
                                         </div>
                                     </div>
                                     <?php
@@ -153,13 +169,13 @@
                                                 <!--                                            <button type="button" class="add-btn btn btn-danger btn-block">Remove</button>-->
                                             </div>
                                         </div>
-                                        <div class="form-group mb-0">
+                                        <div class="form-group">
                                             <label>Image</label><br>
                                             <div class="attachment-box">
                                                 <div class="attachment-btn">
 <!--                                                    <input id="my-file-selector" type="file" class="hidden attach-file" name="image" accept="image/*">-->
                                                     <label for="my-file-selector" class="btn btn-default btn-sm features_img_btn" id="">
-                                                        Browse
+                                                        <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
                                                     </label>
                                                 </div>
 
@@ -168,6 +184,18 @@
                                                     <img class="src-img img-box-normal repeater_img_pr" id="src-img" src="https://via.placeholder.com/200x66">
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Page Location</label><br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="page_location" class="page_location_val" value="home">Home
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="page_location" class="page_location_val" value="resources">Resources
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="page_location" class="page_location_val" value="both">Both
+                                            </label>
                                         </div>
                                     </div>
                                         <?php
@@ -222,12 +250,12 @@
             html += '<button type="button" class="btn btn-primary btn-sm add-btn btn-block"><span class="glyphicon glyphicon-plus gs"></span></button>';
             html += '</div>';
             html += '</div>';
-            html += '<div class="form-group mb-0">';
+            html += '<div class="form-group">';
             html += '<label>Image</label><br>';
             html += '<div class="attachment-box">';
             html += '<div class="attachment-btn">';
             // html += '<input id="my-file-selector'+count+'" type="file" class="hidden attach-file" name="image" accept="image/*">';
-            html += '<label for="my-file-selector" class="btn btn-default btn-sm features_img_btn" id="'+count+'">Browse</label>';
+            html += '<label for="my-file-selector" class="btn btn-default btn-sm features_img_btn" id="'+count+'"><i class="fa fa-upload fa-2x" aria-hidden="true"></i></label>';
 
             html += '</div>';
 
@@ -236,6 +264,18 @@
             html += '<img class="src-img img-box-normal repeater_img_pr" id="src-img'+count+'" src="https://via.placeholder.com/200x66">';
             html += '</div>';
             html += '</div>';
+            html += '</div>';
+            html += '<div class="form-group">';
+            html += '<label for="">Page Location</label><br>';
+            html += '<label class="radio-inline">';
+            html += '<input type="radio" name="page_location'+count+'" class="page_location_val" value="home">Home';
+            html += '</label>';
+            html += '<label class="radio-inline">';
+            html += '<input type="radio" name="page_location'+count+'" class="page_location_val" value="resources">Resources';
+            html += '</label>';
+            html += '<label class="radio-inline">';
+            html += '<input type="radio" name="page_location'+count+'" class="page_location_val" value="both">Both';
+            html += '</label>';
             html += '</div>';
             html += '</div>';
 
@@ -341,7 +381,13 @@
                     success: function ( data ) {
                         console.log(data);
                         if (data = 200) {
-                            alert("Saved Successfully");
+                            $(".general_notification").removeClass('hidden');
+                            window.setTimeout(
+                              function(){
+                                location.reload(true)
+                              },
+                              2000
+                            );
                         }
                     },
                     error: function(e) {
@@ -371,11 +417,18 @@
                     feature_img.push($(this).val());
                 });
 
+                var page_location = [];
+                $('.page_location_val:checked').each(function (){
+                    page_location.push($(this).val());
+                });
+                // alert(page_location); return  false;
+
                 var ajaxData = {
                     'action'        : 'updateThemeOptionsFeatures',
                     'button_title'  : button_title,
                     'button_link'   : button_link,
                     'feature_img'   : feature_img,
+                    'page_location'   : page_location
                 }
 
                 $.ajax({
@@ -385,7 +438,16 @@
                     success: function ( data ) {
                         console.log(data);
                         if (data = 200) {
-                            alert("Saved Successfully");
+                            $(".features_notification").removeClass('hidden');
+                            $('html, body').animate({
+                                    scrollTop: $("#home-feature-list").offset().top
+                            }, 2000);
+                            window.setTimeout(
+                              function(){
+                                location.reload(true)
+                              },
+                              4000
+                            );
                         }
                     },
                     error: function(e) {

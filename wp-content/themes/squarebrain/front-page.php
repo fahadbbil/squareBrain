@@ -68,7 +68,7 @@ get_header();
         </section>
         <section class="home-blocks">
             <div class="container">
-                <?php get_template_part( 'template-parts/content', 'features' ); ?>
+                <?php get_template_part( 'template-parts/content', 'homeFeatures' ); ?>
             </div>
         </section>
 <?php

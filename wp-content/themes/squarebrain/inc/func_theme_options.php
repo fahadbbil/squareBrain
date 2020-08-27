@@ -35,7 +35,8 @@ function theme_options_include_script() {
 		wp_enqueue_media();
 	}
 
-    wp_enqueue_style('themeOptionBSCSS','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+    wp_enqueue_style( 'theme-font-awesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+	wp_enqueue_style('themeOptionBSCSS','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     wp_enqueue_style('themeOptionCSS',get_template_directory_uri().'/assets/css/themeoptions.css');
     wp_enqueue_script( 'bootsrapJS', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery' ) );
 }
@@ -57,18 +58,20 @@ add_action( 'wp_ajax_nopriv_updateThemeOptionsGeneral', 'updateThemeOptionsGener
 
 /*Ajax Call For Feature Lists*/
 function updateThemeOptionsFeatures(){
-//	 echo "<pre>";print_r($_POST);echo "</pre>";
+//	 echo "<pre>";print_r($_POST);echo "</pre>";exit();
     $button_title = $_POST['button_title'];
     $button_link = $_POST['button_link'];
+    $page_location = $_POST['page_location'];
     $feature_img = $_POST['feature_img'];
 
     $squarebrain_features_settings = array();
 
     foreach ($button_title as $key => $value) {
         $squarebrain_features_settings[]=array(
-                'title' =>$button_title[$key],
-                'link' =>$button_link[$key],
-                'image_url' =>$feature_img[$key]
+                'title'         => $button_title[$key],
+                'link' => $button_link[$key],
+                'image_url' => $feature_img[$key],
+                'page_location' => $page_location[$key]
         );
     }
 

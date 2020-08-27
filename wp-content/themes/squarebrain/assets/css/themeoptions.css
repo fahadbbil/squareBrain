@@ -22,12 +22,19 @@
         margin-right: 10px;
     }
 
-    input:not([type="checkbox"]), select, textarea {
+    input, select, textarea {
         border: 1px solid #ddd;
         min-height: 28px;
         padding: 3px 10px;
         line-height: 1.2;
         background-color: #fff;
+    }
+    input[type="radio"] {
+        border: 1px solid;
+        min-height: auto;
+        padding: 0 0 0 0;
+        line-height: 1.2;
+        background-color: transparent;
     }
 
     .attachment-btn .btn {

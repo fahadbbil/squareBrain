@@ -7,6 +7,7 @@
                     // echo "<pre>";print_r($squarebrain_features_decoded);echo "</pre>";
 
                     foreach($squarebrain_features_decoded as $squarebrain_features_item){
+                        if ($squarebrain_features_item->page_location == 'resources' || $squarebrain_features_item->page_location == 'both') {
                 ?>
 
                     <div class="col-md-2">
@@ -17,5 +18,6 @@
                             <a href="<?php echo  $squarebrain_features_item->link;?>" class="btn ylw-btn text-uppercase" target="_blank"><?php echo  $squarebrain_features_item->title;?></a>
                         </div>
                     </div>
-                    <?php } ?>
+                    <?php }
+                    } ?>
                 </div>
