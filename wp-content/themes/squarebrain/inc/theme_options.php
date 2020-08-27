@@ -25,14 +25,35 @@
                                     <div class="form-group">
                                         <label for="phone">Phone </label>
                                         <input id="phone" class="form-control" type="text"
-                                               value="<?php echo get_theme_mod('squarebrain_phone_settings', false); ?>"
+                                               value="<?php echo get_theme_mod('squarebrain_phone_setting', '123456789'); ?>"
                                                class="squarebrain_phone_settings">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email </label>
                                         <input id="email" class="form-control" type="email"
-                                               value="<?php echo get_theme_mod('squarebrain_email_settings', false); ?>"
+                                               value="<?php echo get_theme_mod('squarebrain_email_setting', 'test@test.com'); ?>"
                                                class="squarebrain_email_settings">
+                                    </div>
+
+                                    <div class="form-group mb-0">
+                                        <label>Header Logo</label><br>
+                                        <div class="attachment-box">
+                                            <div class="attachment-btn">
+                                                <input id="general-file-selector" type="file" class="hidden"
+                                                       name="image" accept="image/*">
+                                                <label for="general-file-selector" id="header_logo_img_browse"
+                                                       class="btn btn-default btn-sm">
+                                                    Browse
+                                                </label>
+                                            </div>
+
+                                            <div class="attachment-file-view">
+                                                <input type="text" id="general_file_name_set" class="hidden"
+                                                       value="<?php echo get_theme_mod('squarebrain_header_logo_settings', get_template_directory_uri().'/assets/images/logo.png'); ?>">
+                                                <img class="general-src-img img-box-normal general_file_selec"
+                                                     src="<?php echo get_theme_mod('squarebrain_header_logo_settings', get_template_directory_uri().'/assets/images/logo.png'); ?>">
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group mb-0">
@@ -49,12 +70,13 @@
 
                                             <div class="attachment-file-view">
                                                 <input type="text" id="general_file_name_set" class="hidden"
-                                                       value="<?php echo get_theme_mod('squarebrain_footer_logo_settings', false); ?>">
+                                                       value="<?php echo get_theme_mod('squarebrain_footer_logo_setting', get_template_directory_uri().'/assets/images/logo-black.png'); ?>">
                                                 <img class="general-src-img img-box-normal general_file_selec"
-                                                     src="<?php echo get_theme_mod('squarebrain_footer_logo_settings', false); ?>">
+                                                     src="<?php echo get_theme_mod('squarebrain_footer_logo_setting', get_template_directory_uri().'/assets/images/logo-black.png'); ?>">
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div class="panel-footer">

@@ -16,14 +16,7 @@
 	        <div class="row">
 	            <div class="col-md-3">
 	                <div class="footer-widget">
-                        <?php 
-                            if (get_theme_mod( 'squarebrain_footer_logo_settings', false ) != "") {
-                                $footer_logo = get_theme_mod( 'squarebrain_footer_logo_settings', false );
-                            } else {
-                                $footer_logo = get_template_directory_uri().'/assets/images/logo-black.png';
-                            }
-                        ?>
-	                	<img alt="Cluster Antivirus Logo" src="<?php echo $footer_logo;?>">
+	                	<img alt="Cluster Antivirus Logo" src="<?php echo get_theme_mod( 'squarebrain_footer_logo_setting', get_template_directory_uri().'/assets/images/logo-black.png');?>">
 	                </div>
 	            </div>
 	        </div>

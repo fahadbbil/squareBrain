@@ -39,9 +39,9 @@
 	                    <img alt="Cluster Antivirus Logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
 	                </a>
 	                <div class="nav-btn">
-	                    <a title="Send Email" href="mailto:<?php echo $email =(get_theme_mod( 'squarebrain_email_settings', false ) != "") ? get_theme_mod( 'squarebrain_email_settings', false ) : 'test@test.com' ; ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-1.png"></a>
+	                    <a title="Send Email" href="mailto:<?php echo get_theme_mod( 'squarebrain_email_setting', 'test@test.com' ); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-1.png"></a>
 	                    
-	                    <a title="Call now" href="tel:<?php echo $phone = (get_theme_mod( 'squarebrain_phone_settings', false ) != "") ? get_theme_mod( 'squarebrain_phone_settings', false ) : '123456789' ; ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-2.png"></a>
+	                    <a title="Call now" href="tel:<?php echo get_theme_mod( 'squarebrain_phone_setting', '123456789' ); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-2.png"></a>
 	                    <a title="Search..." href="javascript: void(0)" id="search-toggle"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-3.png"></a>
 	                    <a title="Your Cart Items" href="<?php echo wc_get_cart_url(); ?>"> <img alt="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-4.png">
 	                    	<span id="mini-cart-count">
