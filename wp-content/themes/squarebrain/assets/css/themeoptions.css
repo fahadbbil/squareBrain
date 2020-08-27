@@ -1,0 +1,76 @@
+.mt-2{margin-top: 20px;}
+    .options-nav{ width: 100%; box-sizing: border-box; }
+    .options-nav li{ width: 100%; box-sizing: border-box}
+    .options-nav a{ display: block; border: 1px solid #ccc !important; }
+    .options-nav>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+        color: #fff;
+        cursor: pointer;
+        background-color: #337ab7;
+    }
+    .pr{position: relative; padding-right: 80px;}
+    .pr .abs-btn{position: absolute; top: 0; right: 0}
+
+    .attachment-box {
+        margin-top: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        display: table;
+    }
+
+    .attachment-file-view, .attachment-btn {
+        float: left;
+        margin-right: 10px;
+    }
+
+    input:not([type="checkbox"]), select, textarea {
+        border: 1px solid #ddd;
+        min-height: 28px;
+        padding: 3px 10px;
+        line-height: 1.2;
+        background-color: #fff;
+    }
+
+    .attachment-btn .btn {
+        width: 95px;
+        border-radius: 2px !important;
+        margin-bottom: 5px;
+    }
+
+    .attachment-file-view .img-box-normal {
+        width: 100%;
+        height: 66px;
+        float: left;
+        object-fit: contain;
+        margin-right: 5px;
+        border-radius: 4px !important;
+        border: 1px solid #ddd;
+    }
+    .attachment-file-view {
+        width: 200px;
+    }
+    .attachment-btn {
+        width: 97px;
+    }
+
+    .attachment-btn .btn {
+        width: 95px;
+        border-radius: 2px !important;
+        margin-bottom: 5px;
+    }
+    .row{
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+    }
+
+    .mb-0{margin-bottom: 0}
+    .form-group label{
+        font-weight: 500;
+    }
+
+    .appended-area{
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+    }

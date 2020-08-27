@@ -196,7 +196,7 @@ function wc_refresh_mini_cart_count($fragments){
     <span id="mini-cart-count">
         <?php 
         	if (WC()->cart->get_cart_contents_count() > 0) {
-    			echo WC()->cart->get_cart_contents_count(); 
+    			echo WC()->cart->get_cart_contents_count();
     		}
         ?>
     </span>
@@ -206,76 +206,10 @@ function wc_refresh_mini_cart_count($fragments){
 }
 
 /*
-** Theme Options Menu Create on wp dashboard
-*/
-function theme_options_menu() {
-	add_menu_page(
-		__( 'Theme Options', 'squarebrain' ),
-		__( 'Theme Options', 'squarebrain' ),
-		'manage_options',
-		'theme-options',
-		'my_admin_page_contents',
-		'dashicons-schedule',
-		3
-	);
-	add_action( 'admin_enqueue_scripts', 'theme_options_include_script' );
-}
-
-add_action( 'admin_menu', 'theme_options_menu' );
-
-/*
-** Callback function of content of theme option
-*/
-function my_admin_page_contents() {
-	wp_enqueue_script('jquery');
-	wp_enqueue_media( array( '' ) );
-	require_once "inc/theme_options.php";
-}
-
-function theme_options_include_script() {
- 
-	// I recommend to add additional conditions just to not to load the scipts on each page
- 
-	if ( ! did_action( 'wp_enqueue_media' ) ) {
-		wp_enqueue_media();
-	}
-
-    wp_enqueue_style('themeOptionCSS','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
-    wp_enqueue_script( 'myuploadscript', get_template_directory_uri() . '/assets/js/customscript.js', array( 'jquery' ) );
-    wp_enqueue_script( 'bootsrapJS', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery' ) );
-}
-
-/*
 ** Theme Options Ajax
 */
+require 'inc/func_theme_options.php';
 
-function updateThemeOptionsGeneral(){
-	 echo "<pre>";print_r($_POST);echo "</pre>";
-    $button_title = $_POST['button_title'];
-    $button_link = $_POST['button_link'];
-    $feature_img = $_POST['feature_img'];
-    $squarebrain_features_settings = array();
-
-    foreach ($button_title as $key => $value) {
-        $squarebrain_features_settings[]=array(
-                'title' =>$button_title[$key],
-                'link' =>$button_link[$key],
-                'image_url' =>$feature_img[$key]
-        );
-    }
-
-    $squarebrain_features_settings = json_encode($squarebrain_features_settings);
-
-
-	set_theme_mod( 'squarebrain_features_settings', $squarebrain_features_settings );
-	set_theme_mod( 'squarebrain_phone_settings', $_POST['squarebrain_phone_settings'] );
-	set_theme_mod( 'squarebrain_email_settings', $_POST['squarebrain_email_settings'] );
-	set_theme_mod( 'squarebrain_footer_logo_settings', $_POST['squarebrain_footer_logo_settings'] );
-	echo $success = 200;
-	wp_die();
-}
-add_action( 'wp_ajax_updateThemeOptionsGeneral', 'updateThemeOptionsGeneral' );
-add_action( 'wp_ajax_nopriv_updateThemeOptionsGeneral', 'updateThemeOptionsGeneral' );
 
 function page_bg(){
     $image = '';
@@ -300,140 +234,5 @@ function page_bg(){
     return $image;
 }
 
-//init the meta box
-add_action( 'after_setup_theme', 'custom_postimage_setup' );
-function custom_postimage_setup(){
-    add_action( 'add_meta_boxes', 'custom_postimage_meta_box' );
-    add_action( 'save_post', 'custom_postimage_meta_box_save' );
-    add_action( 'save_post', 'secondaryContentAboutPageSave' );
-}
-
-function custom_postimage_meta_box(){
-    global $post;
-
-    if(!empty($post))
-    {
-        $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
-
-        if($pageTemplate == 'page-about.php' )
-        {
-            add_meta_box(
-                'custom_postimage_meta_box',__( 'About Images', 'squarebrain'), // $id
-                'custom_postimage_meta_box_func',
-                'page',
-                'side',
-                'low'
-            );
-
-            add_meta_box(
-                    'secondary_text',__('Secondary Content','squarebrain'),
-                'secondaryContent',
-                'page',
-                'normal',
-                'high'
-            );
-        }
-    }
-}
-
-function custom_postimage_meta_box_func($post){
-
-    //an array with all the images (ba meta key). The same array has to be in custom_postimage_meta_box_save($post_id) as well.
-    $meta_keys = array('top_about_img','bottom_about_image');
-    $si = 1;
-    foreach($meta_keys as $meta_key){
-        $image_meta_val=get_post_meta( $post->ID, $meta_key, true);
-        ?>
-        <div class="custom_postimage_wrapper" id="<?php echo $meta_key; ?>_wrapper" style="margin-bottom:20px;">
-            <img src="<?php echo ($image_meta_val!=''?wp_get_attachment_image_src( $image_meta_val)[0]:''); ?>" style="width:100%;display: <?php echo ($image_meta_val!=''?'block':'none'); ?>" alt="">
-            <a class="addimage button img_<?php echo $si;?>" onclick="custom_postimage_add_image('<?php echo $meta_key; ?>');"><?php _e('add image','squarebrain'); ?></a><br>
-            <a class="removeimage" style="color:#aa0000;cursor:pointer;display: <?php echo ($image_meta_val!=''?'block':'none'); ?>" onclick="custom_postimage_remove_image('<?php echo $meta_key; ?>');"><?php _e('remove image','squarebrain'); ?></a>
-            <input type="hidden" name="<?php echo $meta_key; ?>" id="<?php echo $meta_key; ?>" value="<?php echo $image_meta_val; ?>" />
-        </div>
-    <?php $si++;} ?>
-    <script>
-    function custom_postimage_add_image(key){
-
-        var $wrapper = jQuery('#'+key+'_wrapper');
-
-        custom_postimage_uploader = wp.media.frames.file_frame = wp.media({
-            title: '<?php _e('select image','squarebrain'); ?>',
-            button: {
-                text: '<?php _e('select image','squarebrain'); ?>'
-            },
-            multiple: false
-        });
-        custom_postimage_uploader.on('select', function() {
-
-            var attachment = custom_postimage_uploader.state().get('selection').first().toJSON();
-            var img_url = attachment['url'];
-            var img_id = attachment['id'];
-            $wrapper.find('input#'+key).val(img_id);
-            $wrapper.find('img').attr('src',img_url);
-            $wrapper.find('img').show();
-            $wrapper.find('a.removeimage').show();
-        });
-        custom_postimage_uploader.on('open', function(){
-            var selection = custom_postimage_uploader.state().get('selection');
-            var selected = $wrapper.find('input#'+key).val();
-            if(selected){
-                selection.add(wp.media.attachment(selected));
-            }
-        });
-        custom_postimage_uploader.open();
-        return false;
-    }
-
-    function custom_postimage_remove_image(key){
-        var $wrapper = jQuery('#'+key+'_wrapper');
-        $wrapper.find('input#'+key).val('');
-        $wrapper.find('img').hide();
-        $wrapper.find('a.removeimage').hide();
-        return false;
-    }
-    </script>
-    <?php
-    wp_nonce_field( 'custom_postimage_meta_box', 'custom_postimage_meta_box_nonce' );
-}
-
-function custom_postimage_meta_box_save($post_id){
-
-    if ( ! current_user_can( 'edit_posts', $post_id ) ){ return 'not permitted'; }
-
-    if (isset( $_POST['custom_postimage_meta_box_nonce'] ) && wp_verify_nonce($_POST['custom_postimage_meta_box_nonce'],'custom_postimage_meta_box' )){
-
-        //same array as in custom_postimage_meta_box_func($post)
-        $meta_keys = array('top_about_img','bottom_about_image');
-        foreach($meta_keys as $meta_key){
-            if(isset($_POST[$meta_key]) && intval($_POST[$meta_key])!=''){
-                update_post_meta( $post_id, $meta_key, intval($_POST[$meta_key]));
-            }else{
-                update_post_meta( $post_id, $meta_key, '');
-            }
-        }
-    }
-}
-
-
-function secondaryContent($post){
-    ?>
-    <table width="100%">
-        <tr>
-            <textarea name="meta[secondaryContent]" id="" style="width: 100%;" rows="10">
-                <?php echo esc_html( get_post_meta( $post->ID, 'secondaryContent', true ) );?>
-            </textarea>
-        </tr>
-    </table>
-    <?php
-}
-
-function secondaryContentAboutPageSave($post_id){
-    if ( ! current_user_can( 'edit_posts', $post_id ) ){ return 'not permitted'; }
-
-    if ( isset( $_POST['meta'] ) ) {
-        foreach( $_POST['meta'] as $key => $value ){
-            update_post_meta( $post_id, $key, $value );
-        }
-    }
-
-}
+/*Meta Box Create For About Page Template*/
+require 'inc/func_about_meta.php';
