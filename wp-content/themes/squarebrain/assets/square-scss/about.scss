@@ -39,6 +39,12 @@ body{
   margin-top: 50px;
 }
 
+.order-2,
+.order-4{
+  font-size: 15px;
+  font-family: -apple-system,BlinkMacSystemFont,Arial,Roboto,"Helvetica Neue",sans-serif;
+}
+
 @media (min-width: 320px) and (max-width: 767px){
   .order-1{ order: 1}
   .order-2{order: 2; margin-top: 0}
