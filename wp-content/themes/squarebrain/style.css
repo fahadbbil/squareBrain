@@ -1011,6 +1011,7 @@ body.page, body.post{
 .page-id-45 .shop_table{
 	background-color: #fff;
 }
+
 .woocommerce-page table.cart td.actions .input-text {
 	width: 90px !important;
 }
@@ -1053,8 +1054,17 @@ body.page, body.post{
 	background-color: #fff;
 }
 
-.page-id-46 article.page {
+.woocommerce-page article.page {
 	padding: 50px 0
+}
+
+.woocommerce-checkout .col2-set{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+#order_review .shop_table{
+	background-color: #fff;
 }
 
 h1, h2, h3, h4, h5{
