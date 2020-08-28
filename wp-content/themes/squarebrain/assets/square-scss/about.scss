@@ -28,8 +28,10 @@ body{
   margin-top: 30px;
 }
 .img-left, .img-right{
-  border: 5px solid #000;
-  width: 80%;
+  border: 3px solid #000;
+  width: 90%;
+  max-height: 320px;
+  object-fit: contain;
 }
 
 .img-left{
@@ -38,6 +40,10 @@ body{
 }
 
 @media (min-width: 320px) and (max-width: 767px){
+  .order-1{ order: 1}
+  .order-2{order: 2; margin-top: 0}
+  .order-3{order: 3}
+  .order-4{order: 4; margin-top: 0 !important;}
   .about-block{
     padding: 50px 0;
     h1 {

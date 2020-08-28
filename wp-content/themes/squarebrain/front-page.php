@@ -23,7 +23,7 @@ get_header();
                         <li data-target="#home-carousel" data-slide-to="3"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active item-one active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/slider/slide-1.png')">
+                        <div class="carousel-item item-one active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/slider/slide-1.png'); background-color:  #4F95A7">
                            <div class="flex">
                                <div class="flex-left">
                                    <h1 class="text-uppercase">squarekit</h1>
@@ -32,7 +32,7 @@ get_header();
                                </div>
                            </div>
                         </div>
-                        <div class="carousel-item item-two" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/slider/slide-2.png')">
+                        <div class="carousel-item item-two" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/slider/slide-2.png'); background-color: #E5BD3E">
                             <div class="flex">
                                 <div class="flex-left">
                                     <h1 class="text-uppercase">squarekit</h1>
@@ -42,7 +42,7 @@ get_header();
                             </div>
                         </div>
 
-                        <div class="carousel-item item-three">
+                        <div class="carousel-item item-three" style="background-color: #CA487B;">
                             <div class="flex">
                                 <div class="flex-center text-center">
                                     <h2 style="margin-bottom: 20px;" class="text-uppercase">receive our newsletter</h2>
@@ -52,7 +52,7 @@ get_header();
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item item-four">
+                        <div class="carousel-item item-four" style="background-color: #6BC4DC;">
                             <div class="flex">
                                 <div class="flex-left">
                                     <h1 class="text-uppercase">featured Blog</h1>

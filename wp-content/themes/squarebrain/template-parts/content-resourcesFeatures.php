@@ -10,7 +10,7 @@
                         if ($squarebrain_features_item->page_location == 'resources' || $squarebrain_features_item->page_location == 'both') {
                 ?>
 
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-6 col-sm-4">
                         <div class="home-feature">
                             <span class="img-box">
                                 <img src="<?php echo  $squarebrain_features_item->image_url;?>" alt="">

@@ -30,14 +30,9 @@ body{
 .home-slider{
   overflow: hidden;
   margin-top: 2px;
-  .item-one{
-    background-color: $dark-blue;
-  }
-  .item-two{
-    background-color: $dark-yellow;
-  }
+
+
   .item-three{
-    background-color: $pink;
     .form-control{
       background-color: $input-bg;
       min-height: 45px;
@@ -62,8 +57,6 @@ body{
 
   }
   .item-four{
-    background-color: $blue;
-
     .post-thumb{
       position: absolute;
       right: 50px;
@@ -136,9 +129,12 @@ body{
   padding: 150px 0;
   .home-feature{
     text-align: center;
+    margin-bottom: 50px;
     .img-box{
-      display: block;
+      display: flex;
+      vertical-align: middle;
       width: 140px;
+      height: 126px;
       background-color: #fff;
       margin: auto auto 15px auto;
       padding: 20px 10px;
@@ -149,12 +145,25 @@ body{
 
     }
     img{
-      max-height: 80px;
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+      margin: auto;
     }
 
   }
 }
-
+@media (min-width: 320px) and (max-width: 400px){
+  .home-blocks{
+    .home-feature{
+        .img-box{
+          width: 125px;
+          height: 105px;
+          padding: 10px;
+        }
+    }
+  }
+}
 @media (min-width: 320px) and (max-width: 767px){
   .home-slider{
     .carousel-item{
@@ -215,6 +224,53 @@ body{
     .home-feature{
       margin-bottom: 40px;
     }
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px){
+  .home-slider {
+
+    .item-four{
+      .post-thumb{
+        width: 37%;
+        height: 179px;
+      }
+    }
+    .carousel-item {
+      height: 350px;
+      background-position: right center;
+      background-size: 351px auto;
+
+      .ml-32 {
+        margin-left: 20px;
+      }
+      .ml-60 {
+        margin-left: 35px;
+      }
+
+      .flex{
+        height: 350px;
+        display: flex;
+        vertical-align: middle;
+
+        .flex-left h1,
+        .flex-center h1 {
+          font-size: 50px;
+        }
+        .flex-left h2,
+        .flex-center h2 {
+          font-size: 45px;
+        }
+
+        .pink-btn, .ylw-btn{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+
+  .home-slider .carousel-item .ml-75 {
+    margin-left: 36px;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px){
