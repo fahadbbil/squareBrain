@@ -29,7 +29,7 @@
                                 while ( $result->have_posts() ) : $result->the_post();
                                 $show = get_post_meta( $post->ID, 'show_button_form', true );
                         ?>
-                        <div class="carousel-item <?php echo $class =($show == 'featured_post') ? 'item-four': ''; echo $active =($count == 0) ? ' active': '';?>" style="background-color: <?php echo esc_html( get_post_meta( $post->ID, 'Slider_background_color', true ) );?>;?<?php if($show ==  'button') {?>background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/slider/slide-2.png')<?php }?>">
+                        <div class="carousel-item <?php echo $class =($show == 'featured_post') ? 'item-four': ''; echo $active =($count == 0) ? ' active': '';?>" style="background-color: <?php echo esc_html( get_post_meta( $post->ID, 'Slider_background_color', true ) );?>;background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
                             <div class="flex">
                                 <?php if ($show == 'button') {?>
 
@@ -41,12 +41,62 @@
 
                                 <?php } elseif ($show == 'form') {?>
 
-                                <div class="flex-center text-center">
+                                <div class="flex-center text-center item-three">
                                     <h2 style="margin-bottom: 20px;" class="text-uppercase">receive our newsletter</h2>
-                                    <input type="text" class="form-control" placeholder="First and Last Name">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                    <a class="btn ylw-btn text-uppercase" href="javascript:void(0)">Submit</a>
+                                    <input type="text" class="form-control newsletterName" placeholder="First and Last Name">
+                                    <input type="email" class="form-control newsletterEmail" placeholder="Email">
+                                    <p class="text-success mail_sent_message hidden">Form is submitted successfully!</p>
+                                    <p class="text-danger mail_error_message">Something is wrong! Please try again later.</p>
+                                    <a  id="<?php echo $count;?>" class="btn ylw-btn text-uppercase newsletterSubmit" href="javascript:void(0)">Submit</a>
                                 </div>
+                                    <script>
+                                        (function ($) {
+                                            var ajaxUrl =   "<?php echo admin_url('admin-ajax.php'); ?>";
+                                            $(document).on("click",".newsletterSubmit",function (e){
+                                                e.preventDefault();
+                                                var newsletterName = $(".newsletterName").val();
+                                                var newsletterEmail = $(".newsletterEmail").val();
+                                                var ajaxData = {
+                                                    'action'           : 'sliderFormSubmit',
+                                                    'newsletterName'   : newsletterName,
+                                                    'newsletterEmail'  : newsletterEmail
+                                                }
+
+                                                $.ajax({
+                                                    url: ajaxUrl,
+                                                    method: 'POST',
+                                                    data: ajaxData,
+                                                    success: function ( data ) {
+                                                        console.log(data);
+                                                        if (data = 200) {
+                                                            $(".mail_sent_message").removeClass('hidden');
+                                                            $(".mail_error_message").addClass('hidden');
+                                                            window.setTimeout(
+                                                              function(){
+                                                                location.reload(true)
+                                                              },
+                                                              2000
+                                                            );
+                                                        } else {
+                                                            $(".mail_error_message").removeClass('hidden');
+                                                            $(".mail_sent_message").addClass('hidden');
+                                                            window.setTimeout(
+                                                              function(){
+                                                                location.reload(true)
+                                                              },
+                                                              2000
+                                                            );
+
+                                                        }
+                                                    },
+                                                    error: function(e) {
+                                                        // alert("Something Went Wrong! Please try again later");
+                                                        console.log(e);
+                                                    }
+                                                });
+                                            });
+                                        })(jQuery);
+                                    </script>
 
                                 <?php } else { $content_details = get_post(get_post_meta( $post->ID, 'featured_selction', true ));?>
                                     <div class="flex">

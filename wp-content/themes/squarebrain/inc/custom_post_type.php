@@ -26,7 +26,7 @@ function custom_post_type() {
         'description'         => __( 'Sliders of SquareBrain', 'squarebrain' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title'),
+        'supports'            => array( 'title','thumbnail'),
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
@@ -140,6 +140,8 @@ function display_sq_slider_settings( $post ) {
                             'orderby'    => 'ID',
                             'post_status' => 'publish',
                             'order'    => 'DESC',
+                            'meta_key' => 'featured-checkbox',
+                            'meta_value' => 'yes',
                             'posts_per_page' => -1 // this will retrive all the post that is published
                         );
 

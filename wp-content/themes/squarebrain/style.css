@@ -1126,4 +1126,9 @@ h1, h2, h3, h4, h5{
 	}
 }
 /*end css for checkout page*/
-
+.text-success{
+	color: green;
+}
+.text-danger{
+	color: darkred;
+}
