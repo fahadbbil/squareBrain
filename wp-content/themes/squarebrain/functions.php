@@ -295,6 +295,8 @@ function sliderFormSubmit(){
     $message .= "</table>";
     if(mail(get_option('admin_email'), "New Submission", $message, $headers)){
       echo $success = 200;
+    } else {
+        echo $success = 401;
     }
 	wp_die();
 }

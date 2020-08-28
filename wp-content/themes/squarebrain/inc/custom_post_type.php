@@ -90,33 +90,11 @@ function display_sq_slider_settings( $post ) {
                 </td>
             </tr>
             <tr>
-                <td><h6>Text: </h6><input type="text" style="width:80%;" name="meta[slider_button_text]" value="<?php echo esc_html( get_post_meta( $post->ID, 'slider_button_text', true ) );?>" />
+                <td><h6>Button Text: </h6><input type="text" style="width:80%;" name="meta[slider_button_text]" value="<?php echo esc_html( get_post_meta( $post->ID, 'slider_button_text', true ) );?>" />
                 </td>
-                <td><h6>URL: </h6><input type="url" style="width:80%;" name="meta[slider_button_url]" value="<?php echo esc_html( get_post_meta( $post->ID, 'slider_button_url', true ) );?>" />
+                <td><h6>Button URL: </h6><input type="url" style="width:80%;" name="meta[slider_button_url]" value="<?php echo esc_html( get_post_meta( $post->ID, 'slider_button_url', true ) );?>" />
                 </td>
-                <td><h6>Background Color: </h6><input type="color" style="width:80%;" name="meta[slider_button_bg]" value="<?php echo esc_html( get_post_meta( $post->ID, 'slider_button_bg', true ) );?>" />
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <br><br>
-                    <div class="mb-0">
-                        <div class="attachment-box">
-                            <div class="attachment-btn">
-                                <label>Image: </label>
-                                <label for="general-file-selector" id="header_logo_img_browse" class="btn btn-default btn-sm">
-                                    <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
-                                </label>
-
-                            </div>
-
-                            <div class="attachment-file-view">
-                                <input type="text" id="header_file_name_set" class="hidden" value="<?php echo get_theme_mod( 'squarebrain_header_logo_setting', get_template_directory_uri().'/assets/images/logo.png' );?>">
-                                <img class="header-src-img img-box-normal general_file_selec" src="<?php echo get_theme_mod( 'squarebrain_header_logo_setting', get_template_directory_uri().'/assets/images/logo.png' );?>">
-                            </div>
-                        </div>
-                    </div>
+                <td><h6>Button Background Color: </h6><input type="color" style="width:80%;" name="meta[slider_button_bg]" value="<?php echo esc_html( get_post_meta( $post->ID, 'slider_button_bg', true ) );?>" />
                 </td>
             </tr>
         </table>

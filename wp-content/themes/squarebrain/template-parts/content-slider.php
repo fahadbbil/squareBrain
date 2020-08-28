@@ -46,7 +46,7 @@
                                     <input type="text" class="form-control newsletterName" placeholder="First and Last Name">
                                     <input type="email" class="form-control newsletterEmail" placeholder="Email">
                                     <p class="text-success mail_sent_message hidden">Form is submitted successfully!</p>
-                                    <p class="text-danger mail_error_message">Something is wrong! Please try again later.</p>
+                                    <p class="text-danger mail_error_message hidden">Something is wrong! Please try again later.</p>
                                     <a  id="<?php echo $count;?>" class="btn ylw-btn text-uppercase newsletterSubmit" href="javascript:void(0)">Submit</a>
                                 </div>
                                     <script>
