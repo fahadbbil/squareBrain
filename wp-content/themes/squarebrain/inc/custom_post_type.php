@@ -26,7 +26,7 @@ function custom_post_type() {
         'description'         => __( 'Sliders of SquareBrain', 'squarebrain' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title','thumbnail'),
+        'supports'            => array( 'title'),
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.

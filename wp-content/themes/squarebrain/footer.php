@@ -31,8 +31,8 @@
 	    </div>
 	</footer>
 
-<?php 
-	if (!is_page( 'products' ) && !is_page( 'cart' ) && !is_single()) {
+<?php
+	if (!is_woocommerce() && ! is_cart() && ! is_checkout() && !is_page('products') ) {
 
 ?>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.min.js"></script> 
