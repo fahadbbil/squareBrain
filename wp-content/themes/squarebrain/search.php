@@ -9,8 +9,12 @@
 
 get_header();
 ?>
-
-	<main id="primary" class="site-main container">
+    <style>
+        .search-page{
+            padding: 90px 0 60px 0;
+        }
+    </style>
+	<main id="primary" class="site-main container search-page">
 
 		<?php if ( have_posts() ) : ?>
 
