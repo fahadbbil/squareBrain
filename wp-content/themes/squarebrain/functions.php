@@ -194,7 +194,7 @@ function wc_refresh_mini_cart_count($fragments){
     ob_start();
     ?>
     <span id="mini-cart-count">
-        <?php 
+        <?php
         	if (WC()->cart->get_cart_contents_count() > 0) {
     			echo WC()->cart->get_cart_contents_count();
     		}
@@ -267,3 +267,8 @@ function dequeueWocoomerceSquareBrain() {
 }
 add_action( 'wp_enqueue_scripts', 'dequeueWocoomerceSquareBrain' );
 
+/*
+ * Custom Post Type Functions
+ * */
+
+    require 'inc/custom_post_type.php';

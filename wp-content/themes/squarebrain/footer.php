@@ -53,6 +53,11 @@
             $('#search-area input[type=text]').focus();
         });
 
+        $(document).on('change', "#mini-cart-count", function(){
+            alert("ok");
+        });
+
+
     })(jQuery);
 </script>
 

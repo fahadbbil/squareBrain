@@ -47,7 +47,7 @@
 	                    	<span id="mini-cart-count">
 	                    		<?php 
 		                    		if (WC()->cart->get_cart_contents_count() != 0) {
-		                    			echo WC()->cart->get_cart_contents_count(); 
+		                    			echo "<span class='cart-count'>".WC()->cart->get_cart_contents_count()."</span>";
 		                    		}
 	                    		?>
 	                    	</span>
