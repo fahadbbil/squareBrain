@@ -88,6 +88,10 @@ main {
 	display: block;
 }
 
+p, span, strong, u, b, table th, table a{
+	font-family: -apple-system,BlinkMacSystemFont,Arial,Roboto,"Helvetica Neue",sans-serif;
+}
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
