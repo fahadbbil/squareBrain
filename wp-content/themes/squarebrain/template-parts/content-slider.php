@@ -17,7 +17,7 @@
                                 while ( $result->have_posts() ) : $result->the_post();
 
                         ?>
-                        <li data-target="#home-carousel" data-slide-to="<?php $si;?>" class="<?php $active = ($si == 0) ? 'active' : '';?>"></li>
+                        <li data-target="#home-carousel" data-slide-to="<?php echo $si;?>" class="<?php $active = ($si == 0) ? 'active' : '';?>"></li>
                             <?php $si++;endwhile; ?>
                         <?php endif; wp_reset_postdata(); ?>
                     </ol>
